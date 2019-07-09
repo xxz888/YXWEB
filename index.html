@@ -26,6 +26,8 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
 <link rel="stylesheet" type="text/css" href="css/revslider.css" >
 <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <script src="js/ajax.js"></script>
 
 </head>
@@ -51,11 +53,8 @@
           <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span> </div>
         </div>
           <ul class="nav hidden-xs menu-item menu-item-left" id="ajaxNav1">
-              <li><a href="#" ><span>首页</span></a></li>
-
+              <li><a href="index.html" ><span>首页</span></a></li>
           </ul>
-
-
     </div>
   </nav>
     <!--内容-->
@@ -440,54 +439,7 @@
 </div>
 
 
-<script>
-    //请求标题
-    ajax('GET','pub/all_option/','',res=>{
-        var htmlFooter = '<li><a href="#" ><span>关于我们</span></a></li>';
-        //动态的导航栏
-        var htmlBody = '';
-        var navTitleArr = [];
-        for(var i = 0 ; i < JSON.parse(res).length ; i++){
-            var dic = JSON.parse(res)[i];
-            navTitleArr.push(dic['child_list']);
-        }
-        for(var i = 0 ; i < navTitleArr[0].length ; i++){
-            var dic = navTitleArr[0][i];
-            var htmlBody1 = `<li class="mega-menu"><a href="#" class="level-top"><span>${dic['name']}</a>
-                                <div style="left: 0px; display: none;"class="level0-wrapper dropdown-6col">
-                                  <div class="container">
-                                    <div class="level0-wrapper2">
-                                       <div class="nav-block nav-block-center">
-                                          <ul class="level0">`;
-            var arr2 =  dic['child_list'];
-            var htmlBody2  = ``;
-            for (var j = 0 ; j < arr2.length; j++){
-                htmlBody2 += `<li class="level1 nav-6-1 parent item">
-                                 <a href="#" class="">
-                                    <span>${arr2[j]['name']}</span>
-                                 </a>
-                                 <ul class="level1">`;
 
-
-                var arr3 = dic['child_list'][j]['child_list'];
-                for(var k = 0 ; k < arr3.length;k++){
-                    var startId =  arr2[j]['id'];
-                    htmlBody2 += `<li class="level2 nav-6-1-1">
-                                    <a href="#">
-                                      <span>${arr3[k]['name']}</span>
-                                    </a>
-                                  </li>`;
-                }
-                htmlBody2 += '</ul>';
-            }
-
-            var htmlBody4 = '</div></div></div></div>';
-            htmlBody += htmlBody1 + htmlBody2 + htmlBody4;
-        }
-        $('#ajaxNav1').append( htmlBody + htmlFooter);
-    })
-
-</script>
 
 
 
@@ -676,7 +628,67 @@
         traget.style.display = "";
     }
 </script>
+<script>
 
+    //请求标题
+        ajax('GET','pub/all_option/','',res=>{
+            var htmlFooter = '<li><a href="#" ><span>关于我们</span></a></li>';
+            //动态的导航栏
+            var htmlBody = '';
+            var navTitleArr = [];
+            for(var i = 0 ; i < JSON.parse(res).length ; i++){
+                var dic = JSON.parse(res)[i];
+                navTitleArr.push(dic['child_list']);
+            }
+
+            for(var i = 0 ; i < navTitleArr[0].length ; i++){
+                var dic = navTitleArr[0][i];
+                var htmlBody1 = `<li class="mega-menu"><a onmouseover="showInfo(${i});" onmouseout="hiddenInfo(${i});" id="tab_2" href="#" class="level-top"><span>${dic['name']}</a>
+                                <div id="div_${i}" style="left: 0px; display: none;"class="level0-wrapper dropdown-6col">
+                                  <div class="container">
+                                    <div class="level0-wrapper2">
+                                       <div class="nav-block nav-block-center">
+                                          <ul class="level0">`;
+                var arr2 =  dic['child_list'];
+                var htmlBody2  = ``;
+                for (var j = 0 ; j < arr2.length; j++){
+                    htmlBody2 += `<li class="level1 nav-6-1 parent item">
+                                 <a href="#" class="">
+                                    <span>${arr2[j]['name']}</span>
+                                 </a>
+                                 <ul class="level1">`;
+
+
+                    var arr3 = dic['child_list'][j]['child_list'];
+                    for(var k = 0 ; k < arr3.length;k++){
+                        var startId =  arr2[j]['id'];
+                        htmlBody2 += `<li class="level2 nav-6-1-1">
+                                    <a href="#">
+                                      <span>${arr3[k]['name']}</span>
+                                    </a>
+                                  </li>`;
+                    }
+                    htmlBody2 += '</ul>';
+                }
+
+                var htmlBody4 = '</div></div></div></div>';
+                htmlBody += htmlBody1 + htmlBody2 + htmlBody4;
+            }
+            $('#ajaxNav1').append( htmlBody + htmlFooter );
+        })
+
+    function showInfo(i){
+        var traget=document.getElementById('div_' + i);
+        traget.style.display = "";
+    };
+    function hiddenInfo(i) {
+        var traget = document.getElementById('div_' + i);
+        traget.style.display = "none";
+    }
+
+
+</script>
 </body>
 </html>
+
 

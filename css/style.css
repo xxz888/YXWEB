@@ -74,7 +74,7 @@ font-family: 'Raleway', sans-serif;}
 	color: #0C242D;
 }
 .products-grid .item .actions a:hover, a.blog-title:hover, #recently-viewed-items .product-name a:hover, #recently-viewed-items .product-name a:hover, ol#compare-items li a.product-name:hover, .block-tags li a:hover, #limiter li a:hover, #sort-by li a:hover {
-	color: #22211D;
+	color: #22211D ;
 }
 /* Buttons */
 button {
