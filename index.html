@@ -26,14 +26,10 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
 <link rel="stylesheet" type="text/css" href="css/revslider.css" >
 <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <script src="js/ajax.js"></script>
 
 </head>
-<script>
-    function doSomething(){
-        var traget=document.getElementById("page");
-        traget.style.display = "";
-    }
-</script>
+
 <body class="cms-index-index index">
 <!--pc-->
 <div id="page">
@@ -54,120 +50,12 @@
         <div class="mm-toggle-wrap">
           <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span> </div>
         </div>
-          <ul class="nav hidden-xs menu-item menu-item-left">
-              <li class="level0 parent drop-menu active"><a href="index.html"><span>首页</span></a>
-              </li>
-              <li class="mega-menu"><a href="#" class="level-top"><span>衬衫</span></a>
-                  <div  style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
-                      <div class="container">
-                          <div class="level0-wrapper2">
-                              <div class="nav-block nav-block-center">
-                                  <ul class="level0">
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                  </ul>
-                              </div>
-                              <!--level0-wrapper2-->
+          <ul class="nav hidden-xs menu-item menu-item-left" id="ajaxNav1">
+              <li><a href="#" ><span>首页</span></a></li>
 
-                          </div>
-                      </div>
-                  </div>
-              </li>
-              <li class="mega-menu"><a href="#" class="level-top"><span>衬衫</span></a>
-                  <div  style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
-                      <div class="container">
-                          <div class="level0-wrapper2">
-                              <div class="nav-block nav-block-center">
-                                  <ul class="level0">
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                      <li class="level1 nav-6-1 parent item"><a href="#.html" class=""><span>衣领类型</span></a>
-                                          <ul class="level1">
-                                              <li class="level2 nav-6-1-1"><a href="#/sport-shoes.html"><span>尖领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/casual-shoes.html"><span>亿领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/leather-shoes.html"><span>纽扣领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>一字领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>圆领</span></a></li>
-                                              <li class="level2 nav-6-1-1"><a href="#/canvas-shoes.html"><span>古巴领</span></a></li>
-                                          </ul>
-                                      </li>
-                                  </ul>
-                              </div>
-                              <!--level0-wrapper2-->
-
-                          </div>
-                      </div>
-                  </div>
-              </li>
-              <li class="level0 nav-8 level-top"><a href="#" class="level-top"><span>下载</span></a></li>
-              <li class="level0 nav-8 level-top"><a href="#" class="level-top"><span>关于我们</span></a></li>
           </ul>
+
+
     </div>
   </nav>
     <!--内容-->
@@ -552,7 +440,54 @@
 </div>
 
 
+<script>
+    //请求标题
+    ajax('GET','pub/all_option/','',res=>{
+        var htmlFooter = '<li><a href="#" ><span>关于我们</span></a></li>';
+        //动态的导航栏
+        var htmlBody = '';
+        var navTitleArr = [];
+        for(var i = 0 ; i < JSON.parse(res).length ; i++){
+            var dic = JSON.parse(res)[i];
+            navTitleArr.push(dic['child_list']);
+        }
+        for(var i = 0 ; i < navTitleArr[0].length ; i++){
+            var dic = navTitleArr[0][i];
+            var htmlBody1 = `<li class="mega-menu"><a href="#" class="level-top"><span>${dic['name']}</a>
+                                <div style="left: 0px; display: none;"class="level0-wrapper dropdown-6col">
+                                  <div class="container">
+                                    <div class="level0-wrapper2">
+                                       <div class="nav-block nav-block-center">
+                                          <ul class="level0">`;
+            var arr2 =  dic['child_list'];
+            var htmlBody2  = ``;
+            for (var j = 0 ; j < arr2.length; j++){
+                htmlBody2 += `<li class="level1 nav-6-1 parent item">
+                                 <a href="#" class="">
+                                    <span>${arr2[j]['name']}</span>
+                                 </a>
+                                 <ul class="level1">`;
 
+
+                var arr3 = dic['child_list'][j]['child_list'];
+                for(var k = 0 ; k < arr3.length;k++){
+                    var startId =  arr2[j]['id'];
+                    htmlBody2 += `<li class="level2 nav-6-1-1">
+                                    <a href="#">
+                                      <span>${arr3[k]['name']}</span>
+                                    </a>
+                                  </li>`;
+                }
+                htmlBody2 += '</ul>';
+            }
+
+            var htmlBody4 = '</div></div></div></div>';
+            htmlBody += htmlBody1 + htmlBody2 + htmlBody4;
+        }
+        $('#ajaxNav1').append( htmlBody + htmlFooter);
+    })
+
+</script>
 
 
 
@@ -735,7 +670,12 @@
 						}
 					});	/*ready*/
 				</script>
-
+<script>
+    function doSomething(){
+        var traget=document.getElementById("page");
+        traget.style.display = "";
+    }
+</script>
 
 </body>
 </html>
