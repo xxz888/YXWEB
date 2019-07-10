@@ -467,8 +467,6 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
 	content: "\f066"
 }
 .fa-plus:before {
-    width: 20px;
-    height: 20px;
     content:  url("../images/up.png");
 }
 .fa-minus:before {
