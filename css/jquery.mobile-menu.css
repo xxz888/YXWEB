@@ -310,9 +310,6 @@ cursor: pointer;
          height: 100%;
          left: 0;
      }
-     /*#page{*/
-         /*display: none;*/
-     /*}*/
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {.mm-toggle-wrap {margin-top:-40px}}
