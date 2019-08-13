@@ -40,15 +40,54 @@ jQuery("#nav li.level0.drop-menu li").mouseover(function(){
 	jQuery(this).children('ul').fadeOut(100);
 }
 });
-
-$(".nav > li").hover(function() {
+//头部hover
+$(".nav > li").hover(
+    function() {
 	var el = $(this).find(".level0-wrapper");
 	el.hide();
 	el.css("left", "0");
-	el.stop(true, true).delay(150).fadeIn(300, "easeOutCubic");
-	}, function() {
-	$(this).find(".level0-wrapper").stop(true, true).delay(300).fadeOut(300, "easeInCubic");
-	});
+	el.stop(false, true).delay(0).fadeIn(0, "easeOutCubic");
+
+
+        var string =  $(this).context.innerText;
+        if (string == "首页" || string == "品牌分类" || string == "关于我们"){
+
+    } else{
+        //字体颜色为黑色
+        var el1 = $(this.parentElement.children).find(".xxzlevel-top");
+        el1.css("color","#000");
+        //最外层背景颜色
+        var el2 = $(this.parentElement.parentElement.parentElement).find("#qqq");
+        el2.css("background-color","#fff");
+
+        var imgEle = $(this.parentElement.parentElement.parentElement).find("#iconImage");
+        imgEle.attr("src","images/homeiconsel.png");
+    }
+
+    },
+    function() {
+	$(this).find(".level0-wrapper").stop(true, true).delay(0).fadeOut(0, "easeInCubic").css("color","#fff");
+	    var string =  $(this).context.innerText;
+        if (string == "首页" || string == "品牌分类" || string == "关于我们"){
+
+        }else{
+            //字体颜色为黑色
+            var el1 = $(this.parentElement.children).find(".xxzlevel-top");
+            el1.css("color","#fff");
+            //最外层背景颜色
+            var el2 = $(this.parentElement.parentElement.parentElement).find("#qqq");
+            el2.css("background-color","transparent");
+
+            var imgEle = $(this.parentElement.parentElement.parentElement).find("#iconImage");
+            imgEle.attr("src","images/homeicon.png");
+        }
+
+
+    },
+    function() {
+
+
+    })
 	var scrolled = false;
 
 jQuery(".nav li.level0.drop-menu").mouseover(function(){

@@ -35,26 +35,33 @@
 <!--pc-->
 <div id="page">
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="header-top">
-                <div class="container">
-                    <div class="row">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!--<header>-->
+    <!--<div class="header-container">-->
+    <!--<div class="header-top">-->
+    <!--<div class="container">-->
+    <!--<div class="row">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</header>-->
     <!--导航-->
-    <nav>
-        <div class="container">
+    <nav >
+        <div class="container" id="qqq">
+
+            <image id="iconImage" style="width:calc(211/1920*100%);height: calc((211/55) * (211/1920*100%)); margin-top:41px;margin-left:calc(360/1920*100%)" src="images/homeicon.png">
+
+            </image>
+
             <div class="mm-toggle-wrap">
                 <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span></div>
             </div>
-            <ul class="nav hidden-xs menu-item menu-item-left">
+
+            <ul  class="nav hidden-xs menu-item menu-item-left" id="eee">
                 <li><a href="index.html"><span>首页</span></a></li>
             </ul>
         </div>
+
     </nav>
     <!--内容-->
     <div id="main">
@@ -62,37 +69,126 @@
         <div class="col-md-3 col-md1">
             <div class="col-1">
                 <a class="b-link-stroke b-animate-go  thickbox">
-                    <img style="width: 100%;height: 100%;" src="images/main.png" class="img-responsive" alt=""/>
+                    <img src="images/homesj.png" class="img-responsive" alt=""/>
                 </a>
             </div>
         </div>
-        <div class="col-md-3 col-md1" style="text-align: center;">
-            <div class="col-4">
-                <img style="width: 50px;height: 50px;border-radius: 10px" src="images/logo.png" class="" alt="">
-            </div>
-            <div class="col-4">
-                <h5 style="color: #0C242D;font-size: 2em;margin-top: 50px">记录分享美好生活</h5>
-                <h5 style="color: #0C242D;font-size: 1.3em;margin-top: 50px">If you love life, life will love you
-                    back</h5>
-            </div>
-            <div class="col-4">
-                <img style="width: 150px;height: 50px;border-radius: 10px;margin-top: 50px" src="images/download.png"
-                     class="" alt="">
-            </div>
-        </div>
-        <div class="col-md-3 col-md1"></div>
-    </div>
-    <!-- Footer -->
-    <div id="footer">
+        <div class="col-md-6 col-md1" style="
+        display:flex;
+        justify-content:center;
+        align-items:flex-start;
+        flex-direction: column;
+        ">
+            <h5 style="
+            color: #fff;
+            font-size: 4.5em;
+            margin-top: calc(147/1080*100%)">蓝皮书</h5>
 
-        <div class="footer-bottom1">
-            <p style="text-align: center;color: #fff;font-size: 0.8em">2019 © THEGDLIFE | 浙ICP备19003242号-1 |
-                杭州艺鑫电子商务有限公司.</p>
+            <h5 style="
+            width:100%;
+            height:48px;
+            font-size:48px;
+            font-family:MicrosoftYaHei;
+            font-weight:400;
+            color:rgba(255,255,255,1);
+            line-height:4px;
+            margin-top: calc(70/1080*100%);">记录分享美好生活</h5>
+
+            <h5 style="
+            width:100%;
+            height:13px;
+            font-size:14px;
+            font-family:Arial-ItalicMT;
+            font-weight:normal;
+            color:rgba(255,255,255,1);
+            line-height:4px;
+            margin-top: calc(10/1080*100%);">If you love life,life will love you back</h5>
+
+            <div style="margin-top:calc(50/1080*100%)">
+                <ul class="footer_flex">
+                    <!-- button -->
+                    <li>
+                        <div style="
+                             width:130px;
+                             height:50px;
+                             border:1px solid rgba(204,204,204,1);
+                             border-radius:5px;
+                             display: flex;
+                             flex-direction: row;
+                             justify-content: space-between;
+
+">
+                            <image
+                                    style="
+                                    width: 19px;
+                                    height: 22px;
+                                    margin-top: 12px;
+                                    margin-left:14px"
+                                    src="images/ios.png"></image>
+
+                            <p style="
+                               width:90px;
+                               margin-top: 22px;
+                               height:15px;
+                               font-size:16px;
+                               font-family:ArialMT;
+                               font-weight:400;
+                               color:rgba(255,255,255,1);
+                               line-height:4px;">App Store</p>
+                        </div>
+                        <div class="flex-footera">
+                            <img src="images/homeewm.png" width='130px' height='130px'>
+                        </div>
+                    </li>
+                    <!-- right -->
+                    <li>
+                        <div style="
+                             width:130px;
+                             height:50px;
+                             border:1px solid rgba(204,204,204,1);
+                             border-radius:5px;
+                             display: flex;
+                             flex-direction: row;
+                             justify-content: space-between;
+                             margin-left: 20px;
+">
+                            <image
+                                    style="
+                                    width: 19px;
+                                    height: 22px;
+                                    margin-top: 12px;
+                                    margin-left:14px"
+                                    src="images/android.png"></image>
+
+                            <p style="
+                               width:90px;
+                               margin-top: 22px;
+                               height:15px;
+                               font-size:16px;
+                               font-family:ArialMT;
+                               font-weight:400;
+                               color:rgba(255,255,255,1);
+                               line-height:4px;">Android</p>
+                        </div>
+                        <div class="flex-footera" style="margin-left: 20px">
+                            <img src="images/homeewm.png" width='130px' height='130px'>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+
         </div>
-        <div class="footer-bottom">
-            <p style="text-align: center;color: #fff;font-size: 0.8em">2019 © THEGDLIFE | 浙ICP备19003242号-1 |
-                杭州艺鑫电子商务有限公司.</p>
-        </div>
+    </div>
+     <!--Footer -->
+    <div id="footer">
+    <div class="footer-bottom">
+    <p style="text-align: center;color: #fff;font-size: 0.8em;font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
+        &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
+    </div>
     </div>
 </div>
 
@@ -268,10 +364,17 @@
         traget.style.display = "";
     }
 </script>
+<script>
+    window.onload = function () {//文档加载完成时
+        getPoint();//获取ID为div1元素的坐标
+    }
+    function getPoint(obj) { //获取某元素以浏览器左上角为原点的坐标
 
+    }
+</script>
 <!--pc导航js时间-->
 <script>
-     ajax('GET', 'pub/all_option/', '', res => {
+    ajax('GET', 'pub/all_option/', '', res => {
         var navTitleArr = [];
         for (var i = 0; i < JSON.parse(res).length; i++) {
             var dic = JSON.parse(res)[i];
@@ -281,22 +384,22 @@
         pc_Action(navTitleArr);
         mobile_Action(navTitleArr);
 
-         var script = document.createElement("script");
-         script.src = "js/common.js";
-         document.body.appendChild(script)
-     });
+        var script = document.createElement("script");
+        script.src = "js/common.js";
+        document.body.appendChild(script)
+    });
 
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><a href="#" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a href="#" ><span>关于我们</span></a></li>';
+        var htmlHeader = '<li><a class="xxzlevel-top" href="#" ><span>首页</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top" href="#" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
-            var htmlBody1 = `<li class="mega-menu"><a   href="#" class="level-top"><span>${dic['name']}</a>
-                                <div  id="div_${i}"  style="left: 0px; display: none;"class="level0-wrapper dropdown-6col">
+            var htmlBody1 = `<li class="mega-menu"><a href="#" class="level-top xxzlevel-top"><span> ${dic['name']}</a>
+                                <div  id="div_${i}"  style="display:none;"class="level0-wrapper dropdown-6col">
                                   <div class="container">
                                     <div class="level0-wrapper2">
                                        <div class="nav-block nav-block-center">
@@ -306,8 +409,16 @@
             for (var j = 0; j < arr2.length; j++) {
                 htmlBody2 += `<li class="level1 nav-6-1 parent item">
                                  <a href="#" class="">
-                                    <span>${arr2[j]['name']}</span>
+                                    <span style="font-size:16px;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(34,34,34,1);
+line-height:4px">┃ ${arr2[j]['name']}</span>
                                  </a>
+                                 <div style="text-align: left">
+                                     <image style="width: 70%;height: auto;" src="${arr2[j]['photo']}"></image>
+                                </div>
+
                                  <ul class="level1">`;
 
 
@@ -316,7 +427,11 @@
                     var startId = arr2[j]['id'];
                     htmlBody2 += `<li class="level2 nav-6-1-1">
                                     <a  href="indexDetail.html?${startId}">
-                                      <span>${arr3[k]['name']}</span>
+                                      <span style="font-size:12px;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(102,102,102,1);
+line-height:4px;">${arr3[k]['name']}</span>
                                     </a>
                                   </li>`;
                 }
@@ -327,6 +442,10 @@
             htmlBody += htmlBody1 + htmlBody2 + htmlBody4;
         }
         $('.container ul').html(htmlHeader + htmlBody + htmlFooter);
+
+//计算距离左边距离
+        var l = $(".container ul")[0].offsetLeft; //对应父容器的上边距
+        $(".dropdown-6col").css("marginLeft",-l);
     };
 
     //手机数据

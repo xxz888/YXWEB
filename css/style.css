@@ -38,7 +38,14 @@ Text Domain:  Superb
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
-	color: #333;
+	color: #ffffff;
+    background:url("../images/homebj.png");
+    background-repeat:no-repeat ;
+    background-size:100% 100%;
+    background-attachment: fixed;
+}
+#main{
+    margin-top: calc(65/1080*100%);
 }
 h2, .h2 {
 	font-size: 20px;
@@ -940,10 +947,8 @@ background:#f6f6f6
 /*----------- 4. Navigation -------------*/
 
 nav {
-	margin: auto;
 	width: 100%;
-	height: 100px;
-
+	height: 128px;
 }
 
 .inner-page nav {background:url('../images/slide-img1.jpg') repeat top left ;
@@ -958,11 +963,14 @@ nav {
 
 .menu-item-left {
     padding-right: 20px;
-    text-align: right;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 41px;
+    width: 100%;
 }
 
 .menu-item-left li {
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 
 .menu-item-right {
@@ -1004,22 +1012,25 @@ nav {
 
 }
 /*导航字属性*/
-.index .nav > li > a {color:#000;
+.index .nav > li > a {
+    color:#fff;
     -webkit-transition: color 200ms ease-in-out;
-    transition: color 200ms ease-in-out;}
+    transition: color 200ms ease-in-out;
+    margin-top: 20px;
+}
 
 .index .nav > li > a:after {
-    height: 1px;
-    font-size: 0;
-    line-height: 0;
-    background: #fff;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    right: 0;
-    top: 100%;
-    content: " ";
-    opacity: 0;
+    /*height: 2px;*/
+    /*font-size: 0;*/
+    /*line-height: 0;*/
+    /*background:rgba(7,33,58,1);*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*right: 0;*/
+    /*top: 100%;*/
+    /*content: " ";*/
+    /*opacity: 0;*/
 
 }
 .index .nav > li > a:hover:after {
@@ -1059,10 +1070,6 @@ nav {
 	position: relative;
 	z-index: 10;
 	-webkit-transform: translateZ(0);
-	margin: auto;
-	margin-top:10px;
-
-
 }
 /* All levels */
 .nav li {
@@ -1077,14 +1084,9 @@ nav {
 	list-style: none;
 	border-bottom: none;
 	display: inline-block;
-
 }
 .nav > li.last {
 	padding-right: 0;
-}
-.nav > li > a {
-	display: block;
-	padding: 0px 0px;
 }
 .nav > li > a > span {
 	display: inline-block;
@@ -1299,7 +1301,7 @@ ul.vertnav-top li > a > span > .cat-label {
 /* horizontal + mobile menu trigger */
 /*导航字体大小*/
 .nav > li > a {
-	font-size: 20px;
+	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: 700;
 	transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
@@ -1329,7 +1331,7 @@ ul.level1 {
 }
 /*下拉框属性*/
 .nav .level0-wrapper, .nav.classic .parent > ul {
-	background: #f1f1f1;
+	background: #fff;
 	border-top: none;
 	box-shadow: 0 10px 20px -5px;
 	width: auto;
@@ -1340,14 +1342,23 @@ ul.level1 {
 .menu-item-right .level0-wrapper{ margin-left:-615px}
 
 .nav .level0-wrapper, .nav.classic ul.level0 {
-	top: 45px;
+	margin-top: 45px;
 }
 .nav > li > a {
-	color: #fff;
-	padding:15px 0px
+	/*color: #fff;*/
+	/*padding:15px 0px*/
+
+    width:100%;
+    height:17px;
+    font-size:calc(16/1920*100%);
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:calc(4/1920*100%);
 }
 .nav > li.mega-menu {
 	position: static;
+    height:100%;
 }
 .nav-inner .nav li.mega-menu .level0-wrapper {
 	border: 0 none;
@@ -1407,15 +1418,15 @@ ul.level1 {
 .nav>li>a:hover, .nav>li>a:focus {background:none}
 
 .nav > li:hover > a:after {
-	height: 1px;
+	height: 4px;
     font-size: 0;
     line-height: 0;
-    background: #fff;
+    background:rgba(7,33,58,1);
     position: absolute;
-    left: 0;
-    width: 100%;
+    left: 12px;
+    width: 50%;
     right: 0;
-    top: 100%;
+    top: 32px;
     content: " ";
     opacity: 1;
     -webkit-transition: all 250ms ease-in-out;
@@ -3248,7 +3259,9 @@ transform: perspective(200px) scale(1) rotateX(0deg)
 }
 }
 /*========== 9. Products Grid ==========*/
+.page{
 
+}
 .page-title h1 {
 	color: #000;
 	font-size: 28px;
@@ -7531,15 +7544,9 @@ footer .coppyright {
 	width: 100%;
 	margin: auto;
 	padding: 20px 0;
-	background-color: #0C242D;
-}
-.footer-bottom1 {
-    padding: 0px;
-    overflow: hidden;
-    width: 100%;
-    margin: auto;
-    padding: 20px 0;
-    background-color: #fff;
+    position: fixed;
+
+    bottom: 0;
 }
 .footer-bottom a {
 	color: #999;
@@ -10438,7 +10445,7 @@ nav {
 
 }
 
-.menu-item-left {padding-left:0px}
+.menu-item-left {padding-left:0px;}
 
 .menu-item-left li {
     margin-right: 40px;
@@ -10799,7 +10806,7 @@ ol#compare-items li a.product-name {
 }
 @media (min-width: 1200px) {
 .nav .container {
-	width: 1220px;
+	width: 100%;
 }
 }
 
@@ -11036,4 +11043,33 @@ ol#compare-items li a.product-name {
 	font-size: 20px;
 	color: #fff;
 	margin-top: 6px;
+}
+#qqq{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height:128px;
+}
+/*弹出*/
+.footer_flex    {list-style:none;}
+.footer_flex li:hover span { display: block; }
+.footer_flex li span { display: none; color: #fff; font-size: 13px; line-height: 45px; }
+.footer_flex { width: 100%; margin: 0;padding: 0 }
+.footer_flex li { width: 130px; height: 45px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin:0; float: left; text-align: center; cursor: pointer; position: relative; }
+
+/*button*/
+.footer_flex li:hover .flex-footera { display: block; }
+.footer_flex li .flex-footera { width: 108px; height: 124px;  left: 0px; top: 0px; text-align: center;  display: none; }
+
+.xxzlevel-top{
+    width:33px;
+    height:17px;
+    font-size:16px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(34,34,34,1);
+    line-height:4px;
 }
