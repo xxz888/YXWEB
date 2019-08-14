@@ -3291,6 +3291,9 @@ transform: perspective(200px) scale(1) rotateX(0deg)
 }
 }
 /*========== 9. Products Grid ==========*/
+#page{
+    display: none;
+}
 .page{
 
 }

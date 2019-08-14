@@ -34,17 +34,6 @@
 <body class="cms-index-index index">
 <!--pc-->
 <div id="page">
-    <!-- Header -->
-    <!--<header>-->
-    <!--<div class="header-container">-->
-    <!--<div class="header-top">-->
-    <!--<div class="container">-->
-    <!--<div class="row">-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</header>-->
     <!--导航-->
     <nav >
         <div class="container" id="qqq">
@@ -456,22 +445,18 @@ line-height:4px;">${arr3[k]['name']}</span>
 
     //手机数据
     function mobile_Action(navTitleArr) {
-        var htmlHeader = '<li><div class="home"><a href="#"><i class="icon-home"></i>首页</a></div></li>';
+        var htmlHeader = "";//'<li><div class="home"><a href="#"><i class="icon-home"></i>首页</a></div></li>';
 
-        var htmlFooter = '<li><div class="home"><a href="#"><i class="icon-home"></i>关于我们</a></div></li>';
+        var htmlFooter = "";//'<li><div class="home"><a href="#"><i class="icon-home"></i>关于我们</a></div></li>';
         //动态的导航栏
         var htmlBody = '';
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
             var htmlBody1 = `
                         <li>
-                        <div style="  display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    ">
+                        <div style="display: flex;flex-direction: row;justify-content: space-between">
                             <a href="#" style="a:active{color:red}!important;">${dic['name']}</a>
-                            <image src="images/up.png" style="width: 20px;height: 20px;margin-top: 10px"></image>
+                            <!--<image class="phoneSelectImg" src="images/up.png" style="width: 20px;height: 20px;margin-top: 12px;margin-right: 30px"></image>-->
                         </div>
 
                         <ul>
