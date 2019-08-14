@@ -69,7 +69,7 @@
         <div class="col-md-3 col-md1">
             <div class="col-1">
                 <a class="b-link-stroke b-animate-go  thickbox">
-                    <img src="images/homesj.png" class="img-responsive" alt=""/>
+                    <img src="images/homesj.jpg" class="img-responsive" alt=""/>
                 </a>
             </div>
         </div>
@@ -202,14 +202,14 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
 
                     </div>
                     <div class="col-xs-4"
-                         style="margin-top: 20px;text-align: center;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
+                         style="color: #000;margin-top: 20px;text-align: center;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
                         TheGoodLife
                     </div>
                     <div class="col-xs-4"
                          style="margin-top: 20px;text-align: right;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
-                        <a href="#">
-                            <image src="images/right.png"></image>
-                        </a>
+                        <!--<a href="#">-->
+                            <!--<image src="images/right.png"></image>-->
+                        <!--</a>-->
                     </div>
                 </div>
 
@@ -391,16 +391,22 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
 
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><a class="xxzlevel-top" href="#" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a class="xxzlevel-top" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top" href="#" ><span>关于我们</span></a></li>';
+        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="#" ><span>首页</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="#" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
-            var htmlBody1 = `<li class="mega-menu"><a href="#" class="level-top xxzlevel-top"><span> ${dic['name']}</a>
+            var htmlBody1 = `<li class="mega-menu">
+                                <a href="#" class="level-top xxzlevel-top">
+                               <span> ${dic['name']} </span>
+                               </a>
                                 <div  id="div_${i}"  style="display:none;"class="level0-wrapper dropdown-6col">
-                                  <div class="container">
+                                <div
+                                style="height:1px;
+                                      background:#DEDEDE;margin-top: 1px;"></div>
+                                  <div class="container" style="margin-top: 40px">
                                     <div class="level0-wrapper2">
                                        <div class="nav-block nav-block-center">
                                           <ul class="level0">`;
@@ -457,7 +463,20 @@ line-height:4px;">${arr3[k]['name']}</span>
         var htmlBody = '';
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
-            var htmlBody1 = `<li><a href="#" style="a:active{color:red}!important;">${dic['name']}</a><ul>`;
+            var htmlBody1 = `
+                        <li>
+                        <div style="  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    ">
+                            <a href="#" style="a:active{color:red}!important;">${dic['name']}</a>
+                            <image src="images/up.png" style="width: 20px;height: 20px;margin-top: 10px"></image>
+                        </div>
+
+                        <ul>
+
+`;
             var arr2 = dic['child_list'];
             var htmlBody2 = '';
             for (var j = 0; j < arr2.length; j++) {

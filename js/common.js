@@ -53,7 +53,7 @@ $(".nav > li").hover(
         if (string == "首页" || string == "品牌分类" || string == "关于我们"){
 
     } else{
-        //字体颜色为黑色
+            //字体颜色为黑色
         var el1 = $(this.parentElement.children).find(".xxzlevel-top");
         el1.css("color","#000");
         //最外层背景颜色

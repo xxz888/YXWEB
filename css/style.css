@@ -10,7 +10,7 @@ Text Domain:  Superb
 /* TABLE OF CONTENTS
 
 1.   Body
-2.   Layout
+2.   Layoutmega-menu
 3.   Header
 4.   Navigation
 5.   Features Box
@@ -39,7 +39,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	color: #ffffff;
-    background:url("../images/homebj.png");
+    background:url("../images/homebj.jpg");
     background-repeat:no-repeat ;
     background-size:100% 100%;
     background-attachment: fixed;
@@ -1331,13 +1331,13 @@ ul.level1 {
 }
 /*下拉框属性*/
 .nav .level0-wrapper, .nav.classic .parent > ul {
-	background: #fff;
-	border-top: none;
-	box-shadow: 0 10px 20px -5px;
-	width: auto;
-	padding: 40px 0px 0px 0px;
-	text-align: left;
-	z-index:100
+	/*background: #fff;*/
+	/*border-top: none;*/
+	/*box-shadow: 0 10px 20px -5px;*/
+	/*width: auto;*/
+	/*padding: 40px 0px 0px 0px;*/
+	/*text-align: left;*/
+	/*z-index:100*/
 }
 .menu-item-right .level0-wrapper{ margin-left:-615px}
 
@@ -1417,14 +1417,14 @@ ul.level1 {
 
 .nav>li>a:hover, .nav>li>a:focus {background:none}
 
-.nav > li:hover > a:after {
+.nav > li:hover > a.level-top:after {
 	height: 4px;
     font-size: 0;
     line-height: 0;
     background:rgba(7,33,58,1);
     position: absolute;
-    left: 12px;
-    width: 50%;
+    left: 14px;
+    width: 30px;
     right: 0;
     top: 32px;
     content: " ";
@@ -1433,9 +1433,41 @@ ul.level1 {
     transition: all 250ms ease-in-out;
    -webkit-transform: translateY(-3px);
     -ms-transform: translateY(-3px);
-
 }
-
+.nav > li:hover > a.xxzlevel-top1:after {
+    height: 4px;
+    font-size: 0;
+    line-height: 0;
+    background:#fff;
+    position: absolute;
+    left: 30px;
+    width: 30px;
+    right: 0;
+    top: 32px;
+    content: " ";
+    opacity: 1;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+}
+.nav > li:hover > a.xxzlevel-top2:after {
+    height: 4px;
+    font-size: 0;
+    line-height: 0;
+    background:#fff;
+    position: absolute;
+    left: 14px;
+    width: 30px;
+    right: 0;
+    top: 32px;
+    content: " ";
+    opacity: 1;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+}
 /* 2nd level only */
 .nav ul.level0 > li {
 	display: inline-block;
@@ -4850,34 +4882,11 @@ ul#magicat li.level0 span.magicat-cat, ul.listStyle li span {
 	display: inline-block;
 	width: 100%;
 }
-ul#magicat li .open-close, .block-layered-nav dt .toggleBtn {
-	display: inline-block;
-	height: 30px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 30px;
-}
+
 .block-layered-nav dt .toggleBtn {
 	cursor: pointer;
 }
-ul#magicat li.active > .open-close, .block-layered-nav dt .toggleBtn.highlight {
-	background-position: 2px -28px;
-}
-ul#magicat ul {
-	padding-left: 10px;
-}
-ul#magicat li .open-close, .block-layered-nav dt .toggleBtn {
-	display: inline-block;
-	height: 30px;
-	position: absolute;
-	right: 0;
-	top: 5px;
-	width: 30px;
-}
-ul#magicat li .open-close, .block-layered-nav dt .toggleBtn {
-	background: url("../images/leftNav.png") no-repeat scroll 2px 3px;
-}
+
 .side-nav-categories .block-title {
 	color: #d3523d;
 	font-size: 13px;
@@ -11072,4 +11081,7 @@ ol#compare-items li a.product-name {
     font-weight:400;
     color:rgba(34,34,34,1);
     line-height:4px;
+}
+#mobile-menu{
+    width:100%
 }
