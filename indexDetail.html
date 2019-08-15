@@ -58,8 +58,8 @@
             style="height:1px;
                                       background:#DEDEDE;margin-top: -5px;"></div>
     <ul class="breadcrumb">
-        <li><a href="javascript:history.back(-1)">你当前的位置:首页</a></li>
-        <li class="active">配饰</li>
+        <li><a href="http://www.thegdlife.com">你当前的位置:首页</a></li>
+        <li class="active"></li>
     </ul>
 
 
@@ -72,20 +72,19 @@
             </ul>
         </div>
     </div>
-
-    <div id="foot" >
-        <div >
-            <p style="
-            text-align: center;
-            color: #fff;
-            font-size: 0.8em;
+    <div style="margin-top:60px;height: 60px; background:rgba(7,33,58,1);display: flex;
+    flex-direction: row;
+    justify-content: center;">
+        <p style="
+            margin-top: 20px;
+            font-size: 15px;
             font-family:MicrosoftYaHei;
-            margin-top: 100px;
-            color:#000;">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
-                &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
-        </div>
+            color:rgba(255,255,255,1);
+
+            ">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
+            &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
     </div>
-</div>
+    </div>
 
 <!--手机-->
 <div id="mobile-menu">
@@ -299,11 +298,12 @@
         }
 
         pc_Action(navTitleArr);
-        mobile_Action(navTitleArr);
 
         var query = window.location.search.substring(1).split('?')[0];
+        var smallId = query.split(":")[0];
+        var bigIndex = query.split(":")[1];
 
-        getIndexData(query);
+        getIndexData(smallId,bigIndex);
 
         var script = document.createElement("script");
         script.src = "js/common.js";
@@ -311,23 +311,26 @@
     });
 
     //得到界面显示的数据
-    function getIndexData(query){
+    function getIndexData(smallId,bigIndex){
         //关闭弹框
 
         $('.level0-wrapper').css('display','none');
+
+        $('.breadcrumb li.active').html(navTitleArr[0][smallId]["name"]);
         var sqlJson = [];
-        for (var i = 0; i < navTitleArr[0][query]["child_list"].length; i++) {
-            var dic = navTitleArr[0][query]["child_list"][i];
+        for (var i = 0; i < navTitleArr[0][smallId]["child_list"].length; i++) {
+            var dic = navTitleArr[0][smallId]["child_list"][i];
 
             for (var k = 0; k < dic["child_list"].length; k++) {
                 var dic1 = dic["child_list"][k];
                 sqlJson.push(dic1);
             }
         }
+
         var html="";
         for(var i in sqlJson){
            // html+="<li class='item'><a href='####' class='a-img'><img src='"+sqlJson[i].photo+"'></a>";
-           html+="<li class='item'><a href='####' class='a-img'><img  src='images/homebj.jpg'></a>";
+           html+=`<li class='item'><a href="indexDetailDetail.html?${sqlJson[i]["father_id"]}:${bigIndex}" class='a-img'><img  src='images/homebj.jpg'></a>`;
            html+="<h2 class='li-title'>"+sqlJson[i].name+"</h2>";
            html+="<p class='description'>袖扣是用来固定没有纽扣的衬衫袖口的珠宝首由于袖扣的装饰价值，人们认为...</p><div class='qianm clearfloat'>";
            html+="<span class='sp1'><b>蓝皮书</b></span>";
@@ -337,15 +340,15 @@
     }
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="javascript:history.back(-1)" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="javascript:history.back(-1)" ><span>关于我们</span></a></li>';
+        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="http://www.thegdlife.com" ><span>首页</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
             var htmlBody1 = `<li class="mega-menu">
-                                <a href="javascript:getIndexData(\'${i}\');" οnclick=""   class="level-top xxzlevel-top">
+                                <a href="indexDetail.html?${i}" οnclick=""   class="level-top xxzlevel-top">
                                <span> ${dic['name']} </span>
                                </a>
                                 <div  id="div_${i}"  style="display:none;"class="level0-wrapper level0-wrapper-detail dropdown-6col">
@@ -379,7 +382,7 @@
                 for (var k = 0; k < arr3.length; k++) {
                     var startId = arr2[j]['id'];
                     htmlBody2 += `<li class="level2 nav-6-1-1">
-                                    <a  href="indexDetail.html?${startId}">
+                                    <a  href="indexDetailDetail.html?${startId+':' + i }">
                                       <span style="font-size:12px;
 font-family:MicrosoftYaHei;
 font-weight:400;
@@ -400,42 +403,6 @@ line-height:4px;">${arr3[k]['name']}</span>
         var l = $(".container ul")[0].offsetLeft; //对应父容器的上边距
         $(".dropdown-6col").css("marginLeft",-l);
     };
-
-    //手机数据
-    function mobile_Action(navTitleArr) {
-        var htmlHeader = "";//'<li><div class="home"><a href="#"><i class="icon-home"></i>首页</a></div></li>';
-
-        var htmlFooter = "";//'<li><div class="home"><a href="#"><i class="icon-home"></i>关于我们</a></div></li>';
-        //动态的导航栏
-        var htmlBody = '';
-        for (var i = 0; i < navTitleArr[0].length; i++) {
-            var dic = navTitleArr[0][i];
-            var htmlBody1 = `
-                        <li>
-                        <div style="display: flex;flex-direction: row;justify-content: space-between">
-                            <a href="#" style="a:active{color:red}!important;">${dic['name']}</a>
-                            <!--<image class="phoneSelectImg" src="images/up.png" style="width: 20px;height: 20px;margin-top: 12px;margin-right: 30px"></image>-->
-                        </div>
-
-                        <ul>
-
-`;
-            var arr2 = dic['child_list'];
-            var htmlBody2 = '';
-            for (var j = 0; j < arr2.length; j++) {
-                htmlBody2 += `<li><a href="#" class="" style="font-family: PingFangSC-Medium, sans-serif">${arr2[j]['name']}</a><ul>`;
-                var arr3 = dic['child_list'][j]['child_list'];
-                for (var k = 0; k < arr3.length; k++) {
-                    var startId = arr2[j]['id'];
-                    htmlBody2 += `<li><a href="indexDetail.html?${startId}" style="font-family: PingFangSC-Regular, sans-serif">${arr3[k]['name']}</a></li>`;
-                }
-                htmlBody2 += '</ul></li>';
-            }
-            var htmlBody4 = '</ul></li>';
-            htmlBody += htmlBody1 + htmlBody2 + htmlBody4;
-        }
-        $('#mobile-menu ul').append(htmlHeader + htmlBody + htmlFooter);
-    }
 
 </script>
 

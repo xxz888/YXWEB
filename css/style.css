@@ -7359,7 +7359,6 @@ footer {
 	overflow: hidden;
 	color: #fff;
 	padding-top: 50px;
-	background: #000 url(../images/footer-bg.jpg) no-repeat top left;
 
 }
 footer ul {
@@ -7663,11 +7662,11 @@ ul.contact-info li.last {
 	margin: auto;
 }
 footer ul span {
-	display: inline-block;
-	font-size: 20px;
-	font-weight: 300;
-	line-height: 15px;
-	padding-right: 3px;
+	/*display: inline-block;*/
+	/*font-size: 20px;*/
+	/*font-weight: 300;*/
+	/*line-height: 15px;*/
+	/*padding-right: 3px;*/
 }
 address {
 	display: block;

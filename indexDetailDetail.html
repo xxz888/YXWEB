@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -15,6 +15,8 @@
 
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 
     <!-- CSS Style -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -25,19 +27,19 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
     <link rel="stylesheet" type="text/css" href="css/revslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-
+    <link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
     <script src="js/ajax.js"></script>
 
 </head>
 
-<body class="cms-index-index index indexVC">
+<body class="cms-index-index index">
 <!--pc-->
 <div id="page">
     <!--导航-->
-    <nav >
+    <nav>
         <div class="container" id="qqq">
 
-            <image id="iconImage" style="width:200px;height: 60px; margin-top:41px;margin-left:calc(360/1920*100%)" src="images/homeicon.png">
+            <image id="iconImage" style="width:200px;height: 60px; margin-top:41px;margin-left:18%" src="images/homeiconsel.png">
 
             </image>
 
@@ -45,139 +47,49 @@
                 <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span></div>
             </div>
 
-            <ul  class="nav hidden-xs menu-item menu-item-left" id="eee">
+
+            <ul  class="nav nav-detail hidden-xs menu-item menu-item-left" id="eee">
                 <li><a href="index.html"><span>首页</span></a></li>
             </ul>
         </div>
 
     </nav>
+    <div
+            style="height:1px;
+                                      background:#DEDEDE;margin-top: -5px;"></div>
+    <ul class="breadcrumb">
+        <li><a href="http://www.thegdlife.com">你当前的位置:首页</a></li>
+        <li><a class="secondA" href="indexDetail.html?0"></a></li>
+        <li class="active"></li>
+    </ul>
+
+
+
     <!--内容-->
-    <div id="main">
+    <div class="" style="height: 100%;">
         <div class="col-md-3 col-md1"></div>
+
+        <div class="col-md-6 col-md1" id="xxzDetailDiv" style="text-align: left;">
+
+        </div>
         <div class="col-md-3 col-md1">
-            <div class="col-1">
-                <a class="b-link-stroke b-animate-go  thickbox">
-                    <img src="images/homesj.jpg" class="img-responsive" alt=""/>
-                </a>
-            </div>
         </div>
-        <div class="col-md-6 col-md1" style="
-        display:flex;
-        justify-content:center;
-        align-items:flex-start;
-        flex-direction: column;
-        ">
-            <h5 style="
-            color: #fff;
-            font-size: 4.5em;
-            margin-top: calc(147/1080*100%)">蓝皮书</h5>
+        <div class="clearfix"></div>
+    </div>
 
-            <h5 style="
-            width:100%;
-            height:48px;
-            font-size:48px;
+    <div style="margin-top:60px;height: 60px; background:rgba(7,33,58,1);display: flex;
+    flex-direction: row;
+    justify-content: center;">
+        <p style="
+            margin-top: 20px;
+            font-size: 15px;
             font-family:MicrosoftYaHei;
-            font-weight:400;
             color:rgba(255,255,255,1);
-            line-height:4px;
-            margin-top: calc(70/1080*100%);">记录分享美好生活</h5>
 
-            <h5 style="
-            width:100%;
-            height:13px;
-            font-size:14px;
-            font-family:Arial-ItalicMT;
-            font-weight:normal;
-            color:rgba(255,255,255,1);
-            line-height:4px;
-            margin-top: calc(10/1080*100%);">If you love life,life will love you back</h5>
-
-            <div style="margin-top:calc(50/1080*100%)">
-                <ul class="footer_flex">
-                    <!-- button -->
-                    <li>
-                        <div style="
-                             width:130px;
-                             height:50px;
-                             border:1px solid rgba(204,204,204,1);
-                             border-radius:5px;
-                             display: flex;
-                             flex-direction: row;
-                             justify-content: space-between;
-
-">
-                            <image
-                                    style="
-                                    width: 19px;
-                                    height: 22px;
-                                    margin-top: 12px;
-                                    margin-left:14px"
-                                    src="images/ios.png"></image>
-
-                            <p style="
-                               width:90px;
-                               margin-top: 22px;
-                               height:15px;
-                               font-size:16px;
-                               font-family:ArialMT;
-                               font-weight:400;
-                               color:rgba(255,255,255,1);
-                               line-height:4px;">App Store</p>
-                        </div>
-                        <div class="flex-footera">
-                            <img src="images/homeewm.png" width='130px' height='130px'>
-                        </div>
-                    </li>
-                    <!-- right -->
-                    <li>
-                        <div style="
-                             width:130px;
-                             height:50px;
-                             border:1px solid rgba(204,204,204,1);
-                             border-radius:5px;
-                             display: flex;
-                             flex-direction: row;
-                             justify-content: space-between;
-                             margin-left: 20px;
-">
-                            <image
-                                    style="
-                                    width: 19px;
-                                    height: 22px;
-                                    margin-top: 12px;
-                                    margin-left:14px"
-                                    src="images/android.png"></image>
-
-                            <p style="
-                               width:90px;
-                               margin-top: 22px;
-                               height:15px;
-                               font-size:16px;
-                               font-family:ArialMT;
-                               font-weight:400;
-                               color:rgba(255,255,255,1);
-                               line-height:4px;">Android</p>
-                        </div>
-                        <div class="flex-footera" style="margin-left: 20px">
-                            <img src="images/homeewm.png" width='130px' height='130px'>
-                        </div>
-                    </li>
-
-
-                </ul>
-            </div>
-
-        </div>
+            ">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
+            &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
     </div>
-     <!--Footer -->
-    <div id="footer">
-    <div class="footer-bottom">
-    <p style="text-align: center;color: #fff;font-size: 0.8em;font-family:MicrosoftYaHei;
-font-weight:400;
-color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
-        &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
-    </div>
-    </div>
+
 </div>
 
 <!--手机-->
@@ -196,7 +108,7 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
                     <div class="col-xs-4"
                          style="margin-top: 20px;text-align: right;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
                         <!--<a href="#">-->
-                            <!--<image src="images/right.png"></image>-->
+                        <!--<image src="images/right.png"></image>-->
                         <!--</a>-->
                     </div>
                 </div>
@@ -208,8 +120,13 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
 
 
 </div>
+
 <!-- JavaScript -->
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="js/jQueryColor.js"></script>
+<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="js/jQeasing.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/countdown.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
@@ -217,6 +134,8 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
 <script type="text/javascript" src="js/jquery.mobile-menu.min.js"></script>
 <script type="text/javascript" src="js/revolution-slider.js"></script>
 <script type="text/javascript" src="js/revolution.extension.js"></script>
+
+
 <script type="text/javascript">
     var dthen1 = new Date("12/25/17 11:59:00 PM");
     start = "05/03/15 03:02:11 AM";
@@ -355,7 +274,7 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
             traget.style.display = "none";
             var traget1 = document.getElementById("mobile-menu");
             traget1.style.display = "block";
-            } else{
+        } else{
             //跳转pc端页面
             var traget = document.getElementById("page");
             traget.style.display = "block";
@@ -365,10 +284,20 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
     }
     browserRedirect();
 </script>
+
+
+
+
+
+
+
+
 <!--pc导航js时间-->
 <script>
+
+    var navTitleArr = [];
     ajax('GET', 'pub/all_option/', '', res => {
-        var navTitleArr = [];
+
         for (var i = 0; i < JSON.parse(res).length; i++) {
             var dic = JSON.parse(res)[i];
             navTitleArr.push(dic['child_list']);
@@ -376,25 +305,84 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
 
         pc_Action(navTitleArr);
 
+        var query = window.location.search.substring(1).split('?')[0];
+        var smallId = query.split(":")[0];
+        var bigIndex = query.split(":")[1];
+
+        getIndexData(smallId,bigIndex);
+
         var script = document.createElement("script");
         script.src = "js/common.js";
-        document.body.appendChild(script)
+        document.body.appendChild(script);
     });
+
+    //得到界面显示的数据
+    function getIndexData(smallId,bigIndex){
+        //关闭弹框
+
+        $('.level0-wrapper').css('display','none');
+        $(".breadcrumb li a.secondA").attr("href","indexDetail.html?"+bigIndex+":"+bigIndex);
+        $(".breadcrumb li a.secondA").html(navTitleArr[0][bigIndex]["name"]);
+
+
+
+        for (var i = 0; i < navTitleArr[0][bigIndex]["child_list"].length; i++) {
+            var dic = navTitleArr[0][bigIndex]["child_list"][i];
+            if (dic["id"] == smallId){
+                $('.breadcrumb li.active').html(dic["name"]);
+
+            }
+        }
+
+
+    // <ul class="breadcrumb">
+    //     <li><a href="javascript:history.back(-1)">你当前的位置:首页</a></li>
+    //     <li><a href="indexDetail.html?0"></a></li>
+    //     <li class="active"></li>
+    //         </ul>
+        ajax('GET', 'pub/option/0/' + smallId + '/', '', res => {
+            var arr = JSON.parse(res);
+            var htmlBody = '';
+            var detailArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                for (var k = 0; k < arr[i].length; k++) {
+                    detailArr.push(arr[i][k]);
+                }
+            }
+            for (var i = 0; i < detailArr.length; i++) {
+                var dic = detailArr[i];
+                if (dic['obj'] == 1) {//大标题
+                    htmlBody += `<p style="text-align: left;font-family:PingFangSC-Semibold, sans-serif;font-size: 23px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
+                } else if (dic['obj'] == 2) {//文章
+                    htmlBody += `<p style="text-align: left;font-family:PingFangSC-Light,  sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
+                } else if (dic['obj'] == 3) {//图片
+                    htmlBody += `<image src="${dic['detail']}" style="text-align: left;width: 100%;height: auto;margin-top: 20px;margin-bottom: 20px"></image>`;
+                } else if (dic['obj'] == 4) {//轮播
+                    htmlBody += `<image src="${dic['detail_list'][0]}" style="text-align: left;width: 100%;height: auto;margin-top: 20px;margin-bottom: 20px"></image>`;
+                } else {//小标题
+                    htmlBody += `<p style="text-align: left;font-family:PingFangSC-Semibold, sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
+                }
+            }
+            $('#xxzDetailDiv').html(htmlBody);
+            var traget = document.getElementById("mobile-menu");
+            traget.style.display = "none";
+        });
+    }
 
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="#" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="#" ><span>关于我们</span></a></li>';
+        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="http://www.thegdlife.com" ><span>首页</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
             var htmlBody1 = `<li class="mega-menu">
-                                <a href="indexDetail.html?${i}:${i}" class="level-top xxzlevel-top">
+                                <a href="indexDetail.html?${i}"   class="level-top xxzlevel-top">
                                <span> ${dic['name']} </span>
                                </a>
-                                <div  id="div_${i}"  style="display:none;"class="level0-wrapper dropdown-6col">
+                                <div  id="div_${i}"  style="display:none;"class="level0-wrapper level0-wrapper-detail dropdown-6col">
                                 <div
                                 style="height:1px;
                                       background:#DEDEDE;margin-top: 1px;"></div>
@@ -407,11 +395,12 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
             for (var j = 0; j < arr2.length; j++) {
                 htmlBody2 += `<li class="level1 nav-6-1 parent item">
                                  <a href="#" class="">
-                                    <span style="font-size:16px;
-font-family:MicrosoftYaHei;
-font-weight:400;
-color:rgba(34,34,34,1);
-line-height:4px">┃ ${arr2[j]['name']}</span>
+                                    <span style="
+                                    font-size:16px;
+                                    font-family:MicrosoftYaHei;
+                                    font-weight:400;
+                                    color:rgba(34,34,34,1);
+                                    line-height:4px">┃ ${arr2[j]['name']}</span>
                                  </a>
                                  <div style="text-align: left">
                                      <image style="width: 70%;height: auto;" src="${arr2[j]['photo']}"></image>
@@ -424,12 +413,12 @@ line-height:4px">┃ ${arr2[j]['name']}</span>
                 for (var k = 0; k < arr3.length; k++) {
                     var startId = arr2[j]['id'];
                     htmlBody2 += `<li class="level2 nav-6-1-1">
-                                    <a  href="indexDetailDetail.html?${startId+':' + i }">
+                                    <a href="javascript:getIndexData(\'${startId}\',\'${i}\');">
                                       <span style="font-size:12px;
-font-family:MicrosoftYaHei;
-font-weight:400;
-color:rgba(102,102,102,1);
-line-height:4px;">${arr3[k]['name']}</span>
+                                                    font-family:MicrosoftYaHei;
+                                                    font-weight:400;
+                                                    color:rgba(102,102,102,1);
+                                                    line-height:4px;">${arr3[k]['name']}</span>
                                     </a>
                                   </li>`;
                 }
