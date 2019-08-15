@@ -35,7 +35,7 @@ Text Domain:  Superb
 
 /*----------- 1. Body --------------*/
 
-body {
+.indexVC{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	color: #ffffff;
@@ -1018,8 +1018,15 @@ nav {
     transition: color 200ms ease-in-out;
     margin-top: 20px;
 }
+/*导航字属性*/
+.index .nav-detail > li > a {
+    color:#000;
+    -webkit-transition: color 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
+    margin-top: 20px;
+}
 
-.index .nav > li > a:after {
+.index .nav,.nav-detail > li > a:after {
     /*height: 2px;*/
     /*font-size: 0;*/
     /*line-height: 0;*/
@@ -1033,7 +1040,7 @@ nav {
     /*opacity: 0;*/
 
 }
-.index .nav > li > a:hover:after {
+.index .nav,.nav-detail > li > a:hover:after {
     opacity: 1;
     -webkit-transform: translateY(-3px);
     -ms-transform: translateY(-3px);
@@ -1060,6 +1067,12 @@ nav {
     transform: translateY(-3px);
 	    margin-top: 2px;
 }
+
+
+
+
+
+
 .cms-index-index .nav .nav-home > a span, .nav > li.active > a span, .vertnav-top li.current > a span {
 	border-right: none;
 }
@@ -1340,6 +1353,11 @@ ul.level1 {
 	/*z-index:100*/
 }
 .menu-item-right .level0-wrapper{ margin-left:-615px}
+
+
+
+
+
 
 .nav .level0-wrapper, .nav.classic ul.level0 {
 	margin-top: 45px;
@@ -3291,9 +3309,6 @@ transform: perspective(200px) scale(1) rotateX(0deg)
 }
 }
 /*========== 9. Products Grid ==========*/
-#page{
-    display: none;
-}
 .page{
 
 }
@@ -7556,7 +7571,7 @@ footer .coppyright {
 	width: 100%;
 	margin: auto;
 	padding: 20px 0;
-    position: fixed;
+    position: relative;
 
     bottom: 0;
 }
@@ -11087,4 +11102,20 @@ ol#compare-items li a.product-name {
 }
 #mobile-menu{
     width:100%
+}
+.fa-plus:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background:url("../images/up.png");
+    background-size:cover;
+}
+.fa-minus:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background:url("../images/down.png");
+    background-size:cover;
 }

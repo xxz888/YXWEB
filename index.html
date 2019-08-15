@@ -18,7 +18,6 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/simple-line-icons.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
@@ -31,14 +30,14 @@
 
 </head>
 
-<body class="cms-index-index index">
+<body class="cms-index-index index indexVC">
 <!--pc-->
 <div id="page">
     <!--导航-->
     <nav >
         <div class="container" id="qqq">
 
-            <image id="iconImage" style="width:calc(211/1920*100%);height: calc((211/55) * (211/1920*100%)); margin-top:41px;margin-left:calc(360/1920*100%)" src="images/homeicon.png">
+            <image id="iconImage" style="width:200px;height: 60px; margin-top:41px;margin-left:calc(360/1920*100%)" src="images/homeicon.png">
 
             </image>
 
@@ -348,18 +347,23 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
     /*ready*/
 </script>
 <script>
-    function doSomething() {
-        var traget = document.getElementById("page");
-        traget.style.display = "";
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
+            //跳转移动端页面
+            var traget = document.getElementById("page");
+            traget.style.display = "none";
+            var traget1 = document.getElementById("mobile-menu");
+            traget1.style.display = "block";
+            } else{
+            //跳转pc端页面
+            var traget = document.getElementById("page");
+            traget.style.display = "block";
+            var traget1 = document.getElementById("mobile-menu");
+            traget1.style.display = "none";
+        }
     }
-</script>
-<script>
-    window.onload = function () {//文档加载完成时
-        getPoint();//获取ID为div1元素的坐标
-    }
-    function getPoint(obj) { //获取某元素以浏览器左上角为原点的坐标
-
-    }
+    browserRedirect();
 </script>
 <!--pc导航js时间-->
 <script>
@@ -388,7 +392,7 @@ color:rgba(255,255,255,1);">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙I
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
             var htmlBody1 = `<li class="mega-menu">
-                                <a href="#" class="level-top xxzlevel-top">
+                                <a href="indexDetail.html?${i}" class="level-top xxzlevel-top">
                                <span> ${dic['name']} </span>
                                </a>
                                 <div  id="div_${i}"  style="display:none;"class="level0-wrapper dropdown-6col">

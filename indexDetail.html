@@ -15,10 +15,11 @@
 
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 
     <!-- CSS Style -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/simple-line-icons.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
@@ -26,8 +27,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
     <link rel="stylesheet" type="text/css" href="css/revslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
-
+    <link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
     <script src="js/ajax.js"></script>
 
 </head>
@@ -35,51 +35,43 @@
 <body class="cms-index-index index">
 <!--pc-->
 <div id="page">
-    <!-- Header -->
-    <!--<header>-->
-        <!--<div class="header-container">-->
-            <!--<div class="header-top">-->
-                <!--<div class="container">-->
-                    <!--<div class="row">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</header>-->
     <!--导航-->
     <nav>
-        <div class="container">
+        <div class="container" id="qqq">
+
+            <image id="iconImage" style="width:200px;height: 60px; margin-top:41px;margin-left:calc(360/1920*100%)" src="images/homeiconsel.png">
+
+            </image>
+
             <div class="mm-toggle-wrap">
                 <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span></div>
             </div>
-            <ul class="nav hidden-xs menu-item menu-item-left">
+
+            <ul  class="nav nav-detail hidden-xs menu-item menu-item-left" id="eee">
                 <li><a href="index.html"><span>首页</span></a></li>
             </ul>
         </div>
+
     </nav>
-    <!--内容-->
-    <div class="" style="height: 100%;">
-        <div class="col-md-3 col-md1"></div>
 
-        <div class="col-md-6 col-md1" id="xxzDetailDiv" style="text-align: left;">
+    <div class="">
 
-        </div>
-        <div class="col-md-3 col-md1">
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <!-- Footer -->
-    <div id="footer">
-        <div class="footer-bottom1">
-            <p style="text-align: center;color: #fff;font-size: 0.8em">2019 © THEGDLIFE | 浙ICP备19003242号-1 |
-                杭州艺鑫电子商务有限公司.</p>
-        </div>
-        <div class="footer-bottom">
-            <p style="text-align: center;color: #fff;font-size: 0.8em">2019 © THEGDLIFE | 浙ICP备19003242号-1 |
-                杭州艺鑫电子商务有限公司.</p>
+        <!-- 瀑布流样式开始 -->
+        <div class="waterfull clearfloat" id="waterfull" >
+            <ul>
+            </ul>
         </div>
     </div>
 
+    <div id="foot" >
+        <div >
+            <p style="text-align: center;color: #fff;font-size: 0.8em;font-family:MicrosoftYaHei;
+            margin-top: 100px;
+color:#000;
+">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
+                &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
+        </div>
+    </div>
 </div>
 
 <!--手机-->
@@ -92,14 +84,14 @@
 
                     </div>
                     <div class="col-xs-4"
-                         style="margin-top: 20px;text-align: center;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
+                         style="color: #000;margin-top: 20px;text-align: center;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
                         TheGoodLife
                     </div>
                     <div class="col-xs-4"
                          style="margin-top: 20px;text-align: right;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
-                        <a href="#">
-                            <image src="images/right.png"></image>
-                        </a>
+                        <!--<a href="#">-->
+                        <!--<image src="images/right.png"></image>-->
+                        <!--</a>-->
                     </div>
                 </div>
 
@@ -110,15 +102,22 @@
 
 
 </div>
+
 <!-- JavaScript -->
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="js/jQueryColor.js"></script>
+<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="js/jQeasing.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/countdown.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-menu.min.js"></script>
 <script type="text/javascript" src="js/revolution-slider.js"></script>
 <script type="text/javascript" src="js/revolution.extension.js"></script>
+
+
 <script type="text/javascript">
     var dthen1 = new Date("12/25/17 11:59:00 PM");
     start = "05/03/15 03:02:11 AM";
@@ -248,6 +247,31 @@
     });
     /*ready*/
 </script>
+<script>
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
+            //跳转移动端页面
+            var traget = document.getElementById("page");
+            traget.style.display = "none";
+            var traget1 = document.getElementById("mobile-menu");
+            traget1.style.display = "block";
+        } else{
+            //跳转pc端页面
+            var traget = document.getElementById("page");
+            traget.style.display = "block";
+            var traget1 = document.getElementById("mobile-menu");
+            traget1.style.display = "none";
+        }
+    }
+    browserRedirect();
+</script>
+
+
+
+
+
+
 
 
 <!--pc导航js时间-->
@@ -258,24 +282,59 @@
             var dic = JSON.parse(res)[i];
             navTitleArr.push(dic['child_list']);
         }
+
         pc_Action(navTitleArr);
         mobile_Action(navTitleArr);
+
+        var query = window.location.search.substring(1).split('?')[0];
+        var contentArr = [];
+        for (var i = 0; i < navTitleArr[0][query]["child_list"].length; i++) {
+            var dic = navTitleArr[0][query]["child_list"][i];
+
+            for (var k = 0; k < dic["child_list"].length; k++) {
+                var dic1 = dic["child_list"][k];
+                contentArr.push(dic1);
+            }
+        }
+        getIndexData(contentArr);
+
         var script = document.createElement("script");
         script.src = "js/common.js";
         document.body.appendChild(script);
     });
+
+    //得到界面显示的数据
+    function getIndexData(sqlJson){
+        var container = $('.waterfull ul');
+        var html="";
+        for(var i in sqlJson){
+           // html+="<li class='item'><a href='####' class='a-img'><img src='"+sqlJson[i].photo+"'></a>";
+           html+="<li class='item'><a href='####' class='a-img'><img  src='images/homebj.jpg'></a>";
+           html+="<h2 class='li-title'>"+sqlJson[i].name+"</h2>";
+           html+="<p class='description'>袖扣是用来固定没有纽扣的衬衫袖口的珠宝首由于袖扣的装饰价值，人们认为...</p><div class='qianm clearfloat'>";
+           html+="<span class='sp1'><b>蓝皮书</b></span>";
+           // html+="<span class='sp2'>"+sqlJson[i].writer+"</span></div></li>";
+        }
+        $('.waterfull ul').html(html);
+    }
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><a href="index.html" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a href="index.html" ><span>关于我们</span></a></li>';
+        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="http://www.thegdlife.com" ><span>首页</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="#" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
-            var htmlBody1 = `<li class="mega-menu"><a   href="#" class="level-top"><span>${dic['name']}</a>
-                                <div  id="div_${i}"  style="left: 0px; display: none;"class="level0-wrapper dropdown-6col">
-                                  <div class="container">
+            var htmlBody1 = `<li class="mega-menu">
+                                <a href="#" class="level-top xxzlevel-top">
+                               <span> ${dic['name']} </span>
+                               </a>
+                                <div  id="div_${i}"  style="display:none;"class="level0-wrapper level0-wrapper-detail dropdown-6col">
+                                <div
+                                style="height:1px;
+                                      background:#DEDEDE;margin-top: 1px;"></div>
+                                  <div class="container" style="margin-top: 40px">
                                     <div class="level0-wrapper2">
                                        <div class="nav-block nav-block-center">
                                           <ul class="level0">`;
@@ -284,8 +343,17 @@
             for (var j = 0; j < arr2.length; j++) {
                 htmlBody2 += `<li class="level1 nav-6-1 parent item">
                                  <a href="#" class="">
-                                    <span>${arr2[j]['name']}</span>
+                                    <span style="
+                                    font-size:16px;
+                                    font-family:MicrosoftYaHei;
+                                    font-weight:400;
+                                    color:rgba(34,34,34,1);
+                                    line-height:4px">┃ ${arr2[j]['name']}</span>
                                  </a>
+                                 <div style="text-align: left">
+                                     <image style="width: 70%;height: auto;" src="${arr2[j]['photo']}"></image>
+                                </div>
+
                                  <ul class="level1">`;
 
 
@@ -293,8 +361,12 @@
                 for (var k = 0; k < arr3.length; k++) {
                     var startId = arr2[j]['id'];
                     htmlBody2 += `<li class="level2 nav-6-1-1">
-                                    <a href="indexDetail.html?${startId}">
-                                      <span>${arr3[k]['name']}</span>
+                                    <a  href="indexDetail.html?${startId}">
+                                      <span style="font-size:12px;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(102,102,102,1);
+line-height:4px;">${arr3[k]['name']}</span>
                                     </a>
                                   </li>`;
                 }
@@ -305,25 +377,39 @@
             htmlBody += htmlBody1 + htmlBody2 + htmlBody4;
         }
         $('.container ul').html(htmlHeader + htmlBody + htmlFooter);
+
+//计算距离左边距离
+        var l = $(".container ul")[0].offsetLeft; //对应父容器的上边距
+        $(".dropdown-6col").css("marginLeft",-l);
     };
+
     //手机数据
     function mobile_Action(navTitleArr) {
-        var htmlHeader = '<li><div class="home"><a href="index.html"><i class="icon-home"></i>首页</a></div></li>';
+        var htmlHeader = "";//'<li><div class="home"><a href="#"><i class="icon-home"></i>首页</a></div></li>';
 
-        var htmlFooter = '<li><div class="home"><a href="index.html"><i class="icon-home"></i>关于我们</a></div></li>';
+        var htmlFooter = "";//'<li><div class="home"><a href="#"><i class="icon-home"></i>关于我们</a></div></li>';
         //动态的导航栏
         var htmlBody = '';
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
-            var htmlBody1 = `<li><a href="javascript:;">${dic['name']}</a><ul>`;
+            var htmlBody1 = `
+                        <li>
+                        <div style="display: flex;flex-direction: row;justify-content: space-between">
+                            <a href="#" style="a:active{color:red}!important;">${dic['name']}</a>
+                            <!--<image class="phoneSelectImg" src="images/up.png" style="width: 20px;height: 20px;margin-top: 12px;margin-right: 30px"></image>-->
+                        </div>
+
+                        <ul>
+
+`;
             var arr2 = dic['child_list'];
             var htmlBody2 = '';
             for (var j = 0; j < arr2.length; j++) {
-                htmlBody2 += `<li><a href="javascript:;">${arr2[j]['name']}</a><ul>`;
+                htmlBody2 += `<li><a href="#" class="" style="font-family: PingFangSC-Medium, sans-serif">${arr2[j]['name']}</a><ul>`;
                 var arr3 = dic['child_list'][j]['child_list'];
                 for (var k = 0; k < arr3.length; k++) {
                     var startId = arr2[j]['id'];
-                    htmlBody2 += `<li><a href="indexDetail.html?${startId}">${arr3[k]['name']}</a></li>`;
+                    htmlBody2 += `<li><a href="indexDetail.html?${startId}" style="font-family: PingFangSC-Regular, sans-serif">${arr3[k]['name']}</a></li>`;
                 }
                 htmlBody2 += '</ul></li>';
             }
@@ -332,40 +418,10 @@
         }
         $('#mobile-menu ul').append(htmlHeader + htmlBody + htmlFooter);
     }
-</script>
-<!--手机端导航js事件-->
-<script>
-    var query = window.location.search.substring(1).split('?')[0];
-    ajax('GET', 'pub/option/0/' + query + '/', '', res => {
-        var arr = JSON.parse(res);
-        var htmlBody = '';
-        var detailArr = [];
-        for (var i = 0; i < arr.length; i++) {
-            for (var k = 0; k < arr[i].length; k++) {
-                detailArr.push(arr[i][k]);
-            }
-        }
-        for (var i = 0; i < detailArr.length; i++) {
-            var dic = detailArr[i];
-            if (dic['obj'] == 1) {//大标题
-                htmlBody += `<p style="text-align: left;font-family:PingFangSC-Semibold, sans-serif;font-size: 23px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
-            } else if (dic['obj'] == 2) {//文章
-                htmlBody += `<p style="text-align: left;font-family:PingFangSC-Light,  sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
-            } else if (dic['obj'] == 3) {//图片
-                htmlBody += `<image src="${dic['detail']}" style="text-align: left;width: 100%;height: auto;margin-top: 20px;margin-bottom: 20px"></image>`;
-            } else if (dic['obj'] == 4) {//轮播
-                htmlBody += `<image src="${dic['detail_list'][0]}" style="text-align: left;width: 100%;height: auto;margin-top: 20px;margin-bottom: 20px"></image>`;
-            } else {//小标题
-                htmlBody += `<p style="text-align: left;font-family:PingFangSC-Semibold, sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
-            }
-        }
-        $('#xxzDetailDiv').append(htmlBody);
-        var traget = document.getElementById("mobile-menu");
-        traget.style.display = "none";
-    });
-
 
 </script>
+
+
 </body>
 </html>
 
