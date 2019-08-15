@@ -39,7 +39,7 @@
     <nav>
         <div class="container" id="qqq">
 
-            <image id="iconImage" style="width:200px;height: 60px; margin-top:41px;margin-left:calc(360/1920*100%)" src="images/homeiconsel.png">
+            <image id="iconImage" style="width:200px;height: 60px; margin-top:41px;margin-left:18%" src="images/homeiconsel.png">
 
             </image>
 
@@ -47,12 +47,22 @@
                 <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span></div>
             </div>
 
+
             <ul  class="nav nav-detail hidden-xs menu-item menu-item-left" id="eee">
                 <li><a href="index.html"><span>首页</span></a></li>
             </ul>
         </div>
 
     </nav>
+    <div
+            style="height:1px;
+                                      background:#DEDEDE;margin-top: -5px;"></div>
+    <ul class="breadcrumb">
+        <li><a href="javascript:history.back(-1)">你当前的位置:首页</a></li>
+        <li class="active">配饰</li>
+    </ul>
+
+
 
     <div class="">
 
@@ -65,10 +75,13 @@
 
     <div id="foot" >
         <div >
-            <p style="text-align: center;color: #fff;font-size: 0.8em;font-family:MicrosoftYaHei;
+            <p style="
+            text-align: center;
+            color: #fff;
+            font-size: 0.8em;
+            font-family:MicrosoftYaHei;
             margin-top: 100px;
-color:#000;
-">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
+            color:#000;">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
                 &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
         </div>
     </div>
@@ -276,8 +289,10 @@ color:#000;
 
 <!--pc导航js时间-->
 <script>
+
+    var navTitleArr = [];
     ajax('GET', 'pub/all_option/', '', res => {
-        var navTitleArr = [];
+
         for (var i = 0; i < JSON.parse(res).length; i++) {
             var dic = JSON.parse(res)[i];
             navTitleArr.push(dic['child_list']);
@@ -287,16 +302,8 @@ color:#000;
         mobile_Action(navTitleArr);
 
         var query = window.location.search.substring(1).split('?')[0];
-        var contentArr = [];
-        for (var i = 0; i < navTitleArr[0][query]["child_list"].length; i++) {
-            var dic = navTitleArr[0][query]["child_list"][i];
 
-            for (var k = 0; k < dic["child_list"].length; k++) {
-                var dic1 = dic["child_list"][k];
-                contentArr.push(dic1);
-            }
-        }
-        getIndexData(contentArr);
+        getIndexData(query);
 
         var script = document.createElement("script");
         script.src = "js/common.js";
@@ -304,8 +311,19 @@ color:#000;
     });
 
     //得到界面显示的数据
-    function getIndexData(sqlJson){
-        var container = $('.waterfull ul');
+    function getIndexData(query){
+        //关闭弹框
+
+        $('.level0-wrapper').css('display','none');
+        var sqlJson = [];
+        for (var i = 0; i < navTitleArr[0][query]["child_list"].length; i++) {
+            var dic = navTitleArr[0][query]["child_list"][i];
+
+            for (var k = 0; k < dic["child_list"].length; k++) {
+                var dic1 = dic["child_list"][k];
+                sqlJson.push(dic1);
+            }
+        }
         var html="";
         for(var i in sqlJson){
            // html+="<li class='item'><a href='####' class='a-img'><img src='"+sqlJson[i].photo+"'></a>";
@@ -319,15 +337,15 @@ color:#000;
     }
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="http://www.thegdlife.com" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="#" ><span>关于我们</span></a></li>';
+        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="javascript:history.back(-1)" ><span>首页</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="javascript:history.back(-1)" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
         for (var i = 0; i < navTitleArr[0].length; i++) {
             var dic = navTitleArr[0][i];
             var htmlBody1 = `<li class="mega-menu">
-                                <a href="#" class="level-top xxzlevel-top">
+                                <a href="javascript:getIndexData(\'${i}\');" οnclick=""   class="level-top xxzlevel-top">
                                <span> ${dic['name']} </span>
                                </a>
                                 <div  id="div_${i}"  style="display:none;"class="level0-wrapper level0-wrapper-detail dropdown-6col">

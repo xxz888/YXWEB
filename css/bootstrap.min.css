@@ -854,7 +854,7 @@ input, button, select, textarea {
 	line-height: inherit
 }
 a {
-	color: #337ab7;
+    color:rgba(153,153,153,1);
 	text-decoration: none
 }
 a:hover, a:focus {
@@ -3679,11 +3679,11 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 .breadcrumb>li+li:before {
 	padding: 0 5px;
-	color: #ccc;
+    color:rgba(153,153,153,1);
 	content: "/\00a0"
 }
 .breadcrumb>.active {
-	color: #777
+    color:rgba(7,33,58,1);
 }
 .pagination {
 	display: inline-block;
