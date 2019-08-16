@@ -181,12 +181,8 @@
 <!-- JavaScript -->
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/countdown.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/jquery.mobile-menu.min.js"></script>
-<script type="text/javascript" src="js/revolution-slider.js"></script>
-<script type="text/javascript" src="js/revolution.extension.js"></script>
+
 <!--pc导航js时间-->
 <script>
 
@@ -205,7 +201,7 @@
 
         var script = document.createElement("script");
         script.src = "js/common.js";
-        document.body.appendChild(script);
+        document.body.appendChild(script)
     } else{
         ajax('GET', 'pub/all_option/', '', res => {
 
