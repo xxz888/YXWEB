@@ -46,27 +46,58 @@
     <div
             style="height:1px;background:#DEDEDE;"></div>
 
-
     <div style="width: 100%;background:rgba(245,245,245,1);padding-bottom: 60px">
-
-        <ul class="breadcrumb" >
+        <ul class="breadcrumb">
             <li><a href="index.html">你当前的位置:首页</a></li>
-            <li class="active"></li>
+            <li class="active">关于我们</li>
         </ul>
 
 
 
+        <div style="text-align: center;width: 100%">
+            <image src="images/map.png" style="width: 60%;height: auto;">
 
-        <div>
 
-            <!-- 瀑布流样式开始 -->
-            <div class="waterfull clearfloat" id="waterfull" >
-                <ul>
-                </ul>
+            </image>
+            <div style="width: 60%;margin-left: 20%">
+                <p style="
+height:24px;
+font-size:24px;
+font-family:MicrosoftYaHei-Bold;
+font-weight:bold;
+color:rgba(8,36,59,1);
+line-height:4px;
+margin-top: 80px;
+text-align: left;
+">什么是蓝皮书</p>
+
+                <p style="
+height:48px;
+font-size:14px;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(51,51,51,1);
+text-align: left;
+
+">
+                    蓝皮书早期主要指英国议会的一种出版物。因封皮是蓝色，故名。开始发行于1681年，自1836年才公开出售。其名称是《英国议会文书》，是英国政府提交议会两院的一种外交资料和文件。后用于代指部分官方文件，通常代表的是学者的观点或者研究团队的学术观点。
+                </p>
+                <p style="
+height:48px;
+font-size:14px;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(51,51,51,1);
+text-align: left;
+
+">
+                    蓝皮书早期主要指英国议会的一种出版物。因封皮是蓝色，故名。开始发行于1681年，自1836年才公开出售。其名称是《英国议会文书》，是英国政府提交议会两院的一种外交资料和文件。后用于代指部分官方文件，通常代表的是学者的观点或者研究团队的学术观点。
+                </p>
             </div>
         </div>
 
     </div>
+
 
     <div style="height: 60px; background:rgba(7,33,58,1);display: flex;
     flex-direction: row;
@@ -80,7 +111,7 @@
             ">2019@ THEGDLIFE &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp 浙ICP备19003242号-1 &nbsp&nbsp&nbsp|
             &nbsp&nbsp&nbsp杭州艺鑫电子商务有限公司</p>
     </div>
-    </div>
+</div>
 
 
 <!-- JavaScript -->
@@ -127,8 +158,9 @@
 <!--pc导航js时间-->
 <script>
 
-        var navTitleArr = [];
+    var navTitleArr = [];
         var res = JSON.parse(localStorage.getItem("cacheData"));
+
         for (var i = 0; i < JSON.parse(res).length; i++) {
             var dic = JSON.parse(res)[i];
             navTitleArr.push(dic['child_list']);
@@ -136,44 +168,10 @@
 
         pc_Action(navTitleArr);
 
-        var query = window.location.search.substring(1).split('?')[0];
-        var smallId = query.split(":")[0];
-        var bigIndex = query.split(":")[1];
-
-        getIndexData(smallId,bigIndex);
-
         var script = document.createElement("script");
         script.src = "js/common.js";
         document.body.appendChild(script);
 
-    //得到界面显示的数据
-    function getIndexData(smallId,bigIndex){
-        //关闭弹框
-
-        $('.level0-wrapper').css('display','none');
-
-        $('.breadcrumb li.active').html(navTitleArr[0][smallId]["name"]);
-        var sqlJson = [];
-        for (var i = 0; i < navTitleArr[0][smallId]["child_list"].length; i++) {
-            var dic = navTitleArr[0][smallId]["child_list"][i];
-
-            for (var k = 0; k < dic["child_list"].length; k++) {
-                var dic1 = dic["child_list"][k];
-                sqlJson.push(dic1);
-            }
-        }
-
-        var html="";
-        for(var i in sqlJson){
-           // html+="<li class='item'><a href='####' class='a-img'><img src='"+sqlJson[i].photo+"'></a>";
-           html+=`<li class='item'><a href="indexDetailDetail.html?${sqlJson[i]["father_id"]}:${bigIndex}" class='a-img'><img  src='images/homebj.jpg'></a>`;
-           html+="<h2 class='li-title'>"+sqlJson[i].name+"</h2>";
-           html+="<p class='description'>袖扣是用来固定没有纽扣的衬衫袖口的珠宝首由于袖扣的装饰价值，人们认为...</p><div class='qianm clearfloat'>";
-           html+="<span class='sp1'><b>蓝皮书</b></span>";
-           // html+="<span class='sp2'>"+sqlJson[i].writer+"</span></div></li>";
-        }
-        $('.waterfull ul').html(html);
-    }
     //pc数据
     function pc_Action(navTitleArr) {
 
@@ -190,7 +188,7 @@
                                 <a href="indexDetail.html?${i}:${i}" class="level-top xxzlevel-top">
                                <span> ${dic['name']} </span>
                                </a>
-                                <div  id="div_${i}"  style="display:none;width: 100%;background: rgb(255,255,255,0.95);"class="level0-wrapper level0-wrapper-detail dropdown-6col">
+                                <div  id="div_${i}"  style="display:none;width: 100%;background:rgb(255,255,255,0.95);"class="level0-wrapper level0-wrapper-detail dropdown-6col">
                                 <div
                                 style="height:1px;
                                       background:#DEDEDE;"></div>

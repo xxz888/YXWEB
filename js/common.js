@@ -68,7 +68,7 @@ $(".nav > li").hover(
     } else{
 
         var string =  $(this).context.innerText;
-        if (string == "首页" || string == "品牌分类" || string == "关于我们"){
+        if (string == "首页" || string == "品牌分类" || string == "关于我们" || string == "") {
 
         } else{
             //字体颜色为黑色
@@ -115,7 +115,7 @@ $(".nav > li").hover(
             imgEle.attr("src","images/homeiconsel.png");
         } else{
             var string =  $(this).context.innerText;
-            if (string == "首页" || string == "品牌分类" || string == "关于我们"){
+            if (string == "首页" || string == "品牌分类" || string == "关于我们" || string == ""){
 
             }else{
                 //字体颜色为黑色

@@ -46,27 +46,33 @@
     <div
             style="height:1px;
                                       background:#DEDEDE;"></div>
-    <ul class="breadcrumb">
-        <li><a href="http://www.thegdlife.com">你当前的位置:首页</a></li>
-        <li><a class="secondA" href="indexDetail.html?0"></a></li>
-        <li class="active"></li>
-    </ul>
+
+
+    <div style="width: 100%;background:rgba(245,245,245,1);padding-bottom: 60px">
+        <ul class="breadcrumb">
+            <li><a href="index.html">你当前的位置:首页</a></li>
+            <li><a class="secondA" href="indexDetail.html?0"></a></li>
+            <li class="active"></li>
+        </ul>
 
 
 
-    <!--内容-->
-    <div class="" style="height: 100%;">
-        <div class="col-md-3 col-md1"></div>
+        <!--内容-->
+        <div class="" style="height: 100%;">
+            <div class="col-md-3 col-md1"></div>
 
-        <div class="col-md-6 col-md1" id="xxzDetailDiv" style="text-align: left;">
+            <div class="col-md-6 col-md1" id="xxzDetailDiv" style="text-align: left;">
 
+            </div>
+            <div class="col-md-3 col-md1">
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="col-md-3 col-md1">
-        </div>
-        <div class="clearfix"></div>
+
     </div>
 
-    <div style="margin-top:60px;height: 60px; background:rgba(7,33,58,1);display: flex;
+
+    <div style="height: 60px; background:rgba(7,33,58,1);display: flex;
     flex-direction: row;
     justify-content: center;">
         <p style="
@@ -81,34 +87,6 @@
 
 </div>
 
-<!--手机-->
-<div id="mobile-menu">
-    <ul>
-        <li>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-
-                    </div>
-                    <div class="col-xs-4"
-                         style="color: #000;margin-top: 20px;text-align: center;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
-                        TheGoodLife
-                    </div>
-                    <div class="col-xs-4"
-                         style="margin-top: 20px;text-align: right;height: 40px;font-size: 15px;font-family: PingFangSC-Semibold, sans-serif">
-                        <!--<a href="#">-->
-                        <!--<image src="images/right.png"></image>-->
-                        <!--</a>-->
-                    </div>
-                </div>
-
-            </div>
-
-        </li>
-    </ul>
-
-
-</div>
 
 <!-- JavaScript -->
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
@@ -285,7 +263,7 @@
 <script>
 
     var navTitleArr = [];
-    ajax('GET', 'pub/all_option/', '', res => {
+    var res = JSON.parse(localStorage.getItem("cacheData"));
 
         for (var i = 0; i < JSON.parse(res).length; i++) {
             var dic = JSON.parse(res)[i];
@@ -303,7 +281,6 @@
         var script = document.createElement("script");
         script.src = "js/common.js";
         document.body.appendChild(script);
-    });
 
     //得到界面显示的数据
     function getIndexData(smallId,bigIndex){
@@ -360,8 +337,8 @@
 
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><image style="width:200px;height: 60px" id="iconImage" src="images/homeiconsel.png"></image></li><li style="margin-left: 300px"><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="#" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com" ><span>关于我们</span></a></li>';
+        var htmlHeader = '<li><image style="width:200px;height: 60px" id="iconImage" src="images/homeiconsel.png"></image></li><li style="margin-left: 300px"><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="index.html" ><span>首页</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="aboutUs.html" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 

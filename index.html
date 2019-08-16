@@ -189,19 +189,45 @@
 <script type="text/javascript" src="js/revolution.extension.js"></script>
 <!--pc导航js时间-->
 <script>
-    ajax('GET', 'pub/all_option/', '', res => {
+
+    var res = JSON.parse(localStorage.getItem("cacheData"));
+
+    if (res){
         var navTitleArr = [];
         for (var i = 0; i < JSON.parse(res).length; i++) {
             var dic = JSON.parse(res)[i];
             navTitleArr.push(dic['child_list']);
         }
 
+
+
         pc_Action(navTitleArr);
 
         var script = document.createElement("script");
         script.src = "js/common.js";
-        document.body.appendChild(script)
-    });
+        document.body.appendChild(script);
+    } else{
+        ajax('GET', 'pub/all_option/', '', res => {
+
+            localStorage.setItem("cacheData",JSON.stringify(res));
+
+
+            var navTitleArr = [];
+            for (var i = 0; i < JSON.parse(res).length; i++) {
+                var dic = JSON.parse(res)[i];
+                navTitleArr.push(dic['child_list']);
+            }
+
+
+
+            pc_Action(navTitleArr);
+
+            var script = document.createElement("script");
+            script.src = "js/common.js";
+            document.body.appendChild(script)
+        });
+    }
+
 
     //pc数据
     function pc_Action(navTitleArr) {
@@ -209,7 +235,7 @@
 
 
         var htmlHeader = '<li><image style="width:200px;height: 60px" id="iconImage" src="images/homeicon.png"></image></li><li style="margin-left: 300px"><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="#" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="#" ><span>关于我们</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="aboutUs.html" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
