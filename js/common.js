@@ -76,7 +76,7 @@ $(".nav > li").hover(
             el1.css("color","#000");
             //最外层背景颜色
             var el2 = $(this.parentElement.parentElement.parentElement).find("#qqq");
-            el2.css("background-color","#fff");
+            el2.css("background-color","rgb(255,255,255,0.95)");
 
             //分割线
             var el3 = $(this.parentElement.parentElement.parentElement).find(".navLine");

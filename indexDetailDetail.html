@@ -36,27 +36,16 @@
 <!--pc-->
 <div id="page">
     <!--导航-->
-    <nav>
+    <nav >
         <div class="container" id="qqq">
-
-            <image id="iconImage" style="width:200px;height: 60px; margin-top:41px;margin-left:18%" src="images/homeiconsel.png">
-
-            </image>
-
-            <div class="mm-toggle-wrap">
-                <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span></div>
-            </div>
-
-
             <ul  class="nav nav-detail hidden-xs menu-item menu-item-left" id="eee">
                 <li><a href="index.html"><span>首页</span></a></li>
             </ul>
         </div>
-
     </nav>
     <div
             style="height:1px;
-                                      background:#DEDEDE;margin-top: -5px;"></div>
+                                      background:#DEDEDE;"></div>
     <ul class="breadcrumb">
         <li><a href="http://www.thegdlife.com">你当前的位置:首页</a></li>
         <li><a class="secondA" href="indexDetail.html?0"></a></li>
@@ -371,7 +360,7 @@
 
     //pc数据
     function pc_Action(navTitleArr) {
-        var htmlHeader = '<li><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="http://www.thegdlife.com" ><span>首页</span></a></li>';
+        var htmlHeader = '<li><image style="width:200px;height: 60px" id="iconImage" src="images/homeiconsel.png"></image></li><li style="margin-left: 300px"><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="#" ><span>首页</span></a></li>';
         var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
@@ -382,7 +371,7 @@
                                 <a href="indexDetail.html?${i}"   class="level-top xxzlevel-top">
                                <span> ${dic['name']} </span>
                                </a>
-                                <div  id="div_${i}"  style="display:none;"class="level0-wrapper level0-wrapper-detail dropdown-6col">
+                                <div  id="div_${i}"  style="display:none;width: 100%;background: rgb(255,255,255,0.95);"class="level0-wrapper level0-wrapper-detail dropdown-6col">
                                 <div
                                 style="height:1px;
                                       background:#DEDEDE;margin-top: 1px;"></div>
@@ -429,10 +418,6 @@
             htmlBody += htmlBody1 + htmlBody2 + htmlBody4;
         }
         $('.container ul').html(htmlHeader + htmlBody + htmlFooter);
-
-//计算距离左边距离
-        var l = $(".container ul")[0].offsetLeft; //对应父容器的上边距
-        $(".dropdown-6col").css("marginLeft",-l);
     };
 
 

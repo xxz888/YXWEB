@@ -8,21 +8,11 @@ input:focus {outline: none;}
 select:focus {outline: none;}
 textarea:focus {outline: none;}
 textarea{resize: none;}
-a{
-	text-decoration: none;
-}
-a:focus {
-    outline:none;
-}
-img{
-	border: none;
-}
+
 b{
 	font-weight:normal;
 }
-ul{
-	list-style: none;
-}
+
 .fl{
 	float: left;
 }
