@@ -20,12 +20,8 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/simple-line-icons.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
-    <link rel="stylesheet" type="text/css" href="css/revslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
     <link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
     <script src="js/ajax.js"></script>
@@ -47,18 +43,18 @@
             style="height:1px;background:#DEDEDE;"></div>
 
 
-    <div style="width: 100%;background:rgba(245,245,245,1);padding-bottom: 60px">
+    <div style="width: 100%;;background:rgba(245,245,245,1);padding-bottom: 60px;">
+        <!--<ul class="breadcrumb" >-->
+            <!--<li><a href="index.html">你当前的位置:首页</a></li>-->
+            <!--<li class="active"></li>-->
+        <!--</ul>-->
+        <div class="box">
+            <ul class="f-nav" id='f-nav'>
 
-        <ul class="breadcrumb" >
-            <li><a href="index.html">你当前的位置:首页</a></li>
-            <li class="active"></li>
-        </ul>
-
-
-
-
+            </ul>
+            <div style="height:1px;background:#DEDEDE;margin-top: -10px"></div>
+        </div>
         <div>
-
             <!-- 瀑布流样式开始 -->
             <div class="waterfull clearfloat" id="waterfull" >
                 <ul>
@@ -116,9 +112,7 @@
 
 
 
-
-
-
+<script type="text/javascript" src="js/jquery-nav.js"></script>
 
 <!--pc导航js时间-->
 <script>
@@ -136,19 +130,12 @@
         var smallId = query.split(":")[0];
         var bigIndex = query.split(":")[1];
 
-        getIndexData(smallId,bigIndex);
 
-        var script = document.createElement("script");
-        script.src = "js/common.js";
-        document.body.appendChild(script);
-
-    //得到界面显示的数据
-    function getIndexData(smallId,bigIndex){
         //关闭弹框
 
-        $('.level0-wrapper').css('display','none');
-
-        $('.breadcrumb li.active').html(navTitleArr[0][smallId]["name"]);
+        // $('.level0-wrapper').css('display','none');
+        //
+        // $('.breadcrumb li.active').html(navTitleArr[0][smallId]["name"]);
         var sqlJson = [];
         for (var i = 0; i < navTitleArr[0][smallId]["child_list"].length; i++) {
             var dic = navTitleArr[0][smallId]["child_list"][i];
@@ -158,6 +145,61 @@
                 sqlJson.push(dic1);
             }
         }
+
+        getIndexData(sqlJson);
+
+        var script = document.createElement("script");
+        script.src = "js/common.js";
+        document.body.appendChild(script);
+
+
+        var arr = ["全部"];
+        for (var i = 0; i < navTitleArr[0][smallId]["child_list"].length; i++) {
+            var dic = navTitleArr[0][smallId]["child_list"][i];
+            arr.push(dic["name"]);
+        }
+        var html = "";
+        for (let i = 0; i < arr.length; i++) {
+            if (i==0){html +=`<li style="color: #fff;">${arr[i]}</li>`}
+            else
+            html += `<li>${arr[i]}</li>`;
+        }
+        html += `<div class='sideline'></div>`;
+        $('#f-nav').html(html);
+
+
+        $('#f-nav').tooltip({
+            default: 0,       // 默认为空  --  选中默认值
+            width: '100',     // 限制宽度
+            height: '40',
+            type: 'slideMove',  // 必填, 选择内容
+            success: function(ret){
+                console.log(ret);
+            }   //初始化回调
+        });
+
+
+        $('.f-nav').on('click','li',function () {
+            $(this).css('color','#fff');
+            $(this).siblings().css("color",'#000');
+            console.log($(this).index());
+
+            var sqlJson = [];
+                var dic = navTitleArr[0][smallId]["child_list"][$(this).index()-1];
+
+                for (var k = 0; k < dic["child_list"].length; k++) {
+                    var dic1 = dic["child_list"][k];
+                    sqlJson.push(dic1);
+                }
+
+            getIndexData(sqlJson);
+
+        });
+
+
+    //得到全部界面显示的数据
+    function getIndexData(sqlJson){
+
 
         var html="";
         for(var i in sqlJson){
@@ -221,7 +263,7 @@ line-height:4px">┃ ${arr2[j]['name']}</span>
 font-family:MicrosoftYaHei;
 font-weight:400;
 color:rgba(102,102,102,1);
-line-height:4px;">${arr3[k]['name']}</span>
+line-height:4px;">&nbsp ${arr3[k]['name']}</span>
                                     </a>
                                   </li>`;
                 }
@@ -239,6 +281,8 @@ line-height:4px;">${arr3[k]['name']}</span>
     };
 
 </script>
+
+
 
 
 </body>

@@ -2,32 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- Favicons Icon -->
-
     <title>Home</title>
-
-    <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- CSS Style -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/simple-line-icons.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-menu.css">
-    <link rel="stylesheet" type="text/css" href="css/revslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-
     <script src="js/ajax.js"></script>
-
 </head>
 
 <body class="cms-index-index index indexVC">
@@ -194,11 +179,7 @@
             var dic = JSON.parse(res)[i];
             navTitleArr.push(dic['child_list']);
         }
-
-
-
         pc_Action(navTitleArr);
-
         var script = document.createElement("script");
         script.src = "js/common.js";
         document.body.appendChild(script)
@@ -254,11 +235,17 @@
             for (var j = 0; j < arr2.length; j++) {
                 htmlBody2 += `<li class="level1 nav-6-1 parent item">
                                  <a href="#" class="">
+                                 <span style="width:4px;
+height:15px;
+background:rgba(7,33,58,1);
+    display: inline-block;
+
+"></span>
                                     <span style="font-size:16px;
 font-family:MicrosoftYaHei;
 font-weight:400;
 color:rgba(34,34,34,1);
-line-height:4px">┃ ${arr2[j]['name']}</span>
+line-height:4px"> ${arr2[j]['name']}</span>
                                  </a>
                                  <div style="text-align: left">
                                      <image style="width: 70%;height: auto;" src="${arr2[j]['photo']}"></image>

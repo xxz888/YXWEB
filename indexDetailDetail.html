@@ -91,141 +91,10 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/countdown.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/jquery.mobile-menu.min.js"></script>
 <script type="text/javascript" src="js/revolution-slider.js"></script>
 <script type="text/javascript" src="js/revolution.extension.js"></script>
 
 
-<script type="text/javascript">
-    var dthen1 = new Date("12/25/17 11:59:00 PM");
-    start = "05/03/15 03:02:11 AM";
-    start_date = Date.parse(start);
-    var dnow1 = new Date(start_date);
-    if (CountStepper > 0)
-        ddiff = new Date((dnow1) - (dthen1));
-    else
-        ddiff = new Date((dthen1) - (dnow1));
-    gsecs1 = Math.floor(ddiff.valueOf() / 1000);
-
-    var iid1 = "countbox_1";
-    CountBack_slider(gsecs1, "countbox_1", 1);
-
-    var dthen1 = new Date("12/12/17 11:59:00 PM");
-    start = "01/20/16 03:02:11 AM";
-    start_date = Date.parse(start);
-    var dnow1 = new Date(start_date);
-    if (CountStepper > 0)
-        ddiff = new Date((dnow1) - (dthen1));
-    else
-        ddiff = new Date((dthen1) - (dnow1));
-    gsecs1 = Math.floor(ddiff.valueOf() / 1000);
-
-    var iid1 = "countbox_2";
-    CountBack_slider(gsecs1, "countbox_2", 1);
-</script>
-<script type="text/javascript">
-    var tpj = jQuery;
-    var revapi4;
-    tpj(document).ready(function () {
-        if (tpj("#rev_slider_4_1").revolution == undefined) {
-            revslider_showDoubleJqueryError("#rev_slider_4_1");
-        } else {
-            revapi4 = tpj("#rev_slider_4_1").show().revolution({
-                sliderType: "standard",
-                sliderLayout: "fullwidth",
-                dottedOverlay: "none",
-                delay: 9000,
-                navigation: {
-                    keyboardNavigation: "off",
-                    keyboard_direction: "horizontal",
-                    mouseScrollNavigation: "off",
-                    onHoverStop: "off",
-                    touch: {
-                        touchenabled: "on",
-                        swipe_threshold: 75,
-                        swipe_min_touches: 1,
-                        swipe_direction: "horizontal",
-                        drag_block_vertical: false
-                    }
-                    ,
-                    arrows: {
-                        style: "zeus",
-                        enable: true,
-                        hide_onmobile: true,
-                        hide_under: 750,
-                        hide_onleave: true,
-                        hide_delay: 200,
-                        hide_delay_mobile: 1200,
-                        tmp: '<div class="tp-title-wrap">  	<div class="tp-arr-imgholder"></div> </div>',
-                        left: {
-                            h_align: "left",
-                            v_align: "center",
-                            h_offset: 30,
-                            v_offset: 0
-                        },
-                        right: {
-                            h_align: "right",
-                            v_align: "center",
-                            h_offset: 30,
-                            v_offset: 0
-                        }
-                    }
-                    ,
-                    bullets: {
-                        enable: true,
-                        hide_onmobile: true,
-                        hide_under: 600,
-                        style: "metis",
-                        hide_onleave: true,
-                        hide_delay: 200,
-                        hide_delay_mobile: 1200,
-                        direction: "horizontal",
-                        h_align: "center",
-                        v_align: "bottom",
-                        h_offset: 0,
-                        v_offset: 30,
-                        space: 5,
-                        tmp: '<span class="tp-bullet-img-wrap">  <span class="tp-bullet-image"></span></span><span class="tp-bullet-title">{{title}}</span>'
-                    }
-                },
-                viewPort: {
-                    enable: true,
-                    outof: "pause",
-                    visible_area: "80%"
-                },
-                responsiveLevels: [1240, 1024, 778, 480],
-                gridwidth: [768, 1024, 778, 480],
-                gridheight: [890, 600, 500, 400],
-                lazyType: "none",
-                parallax: {
-                    type: "mouse",
-                    origo: "slidercenter",
-                    speed: 2000,
-                    levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
-                },
-                shadow: 0,
-                spinner: "off",
-                stopLoop: "off",
-                stopAfterLoops: -1,
-                stopAtSlide: -1,
-                shuffle: "off",
-                autoHeight: "off",
-                hideThumbsOnMobile: "off",
-                hideSliderAtLimit: 0,
-                hideCaptionAtLimit: 0,
-                hideAllCaptionAtLilmit: 0,
-                debugMode: false,
-                fallbacks: {
-                    simplifyAll: "off",
-                    nextSlideOnWindowFocus: "off",
-                    disableFocusListener: false,
-                }
-            });
-        }
-    });
-    /*ready*/
-</script>
 <script>
     function browserRedirect() {
         var sUserAgent = navigator.userAgent.toLowerCase();
@@ -293,13 +162,6 @@
 
             }
         }
-
-
-    // <ul class="breadcrumb">
-    //     <li><a href="javascript:history.back(-1)">你当前的位置:首页</a></li>
-    //     <li><a href="indexDetail.html?0"></a></li>
-    //     <li class="active"></li>
-    //         </ul>
         ajax('GET', 'pub/option/0/' + smallId + '/', '', res => {
             var arr = JSON.parse(res);
             var htmlBody = '';
@@ -318,14 +180,42 @@
                 } else if (dic['obj'] == 3) {//图片
                     htmlBody += `<image src="${dic['detail']}" style="text-align: left;width: 100%;height: auto;margin-top: 20px;margin-bottom: 20px"></image>`;
                 } else if (dic['obj'] == 4) {//轮播
-                    htmlBody += `<image src="${dic['detail_list'][0]}" style="text-align: left;width: 100%;height: auto;margin-top: 20px;margin-bottom: 20px"></image>`;
+                    var obj4Header = `<div id="myShuffArea">
+                                         <div id="myCarousel_${dic["id"]}" class="carousel slide" data-ride="carousel">
+                                         <!--轮播指标-->
+                                             <ol class="carousel-indicators">
+                                               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                               <li data-target="#myCarousel" data-slide-to="1" ></li>
+                                               <li data-target="#myCarousel" data-slide-to="2" ></li>
+                                             </ol>
+                                           <div class="carousel-inner">`;
+
+                    var obj4Body = '';
+                    //计算轮播数组的长度
+                    for (var j = 0; j < dic["detail_list"].length; j++) {
+                        if (j == 0){
+                            obj4Body += `<div class="item active"><img src="${dic['detail_list'][j]}"/></div>`
+                        } else{
+                            obj4Body += `<div class="item"><img src="${dic['detail_list'][j]}"/></div>`
+                        }
+                    }
+                    var obj4Footer = `</div>
+                                         <a class="left carousel-control" href="#myCarousel_${dic["id"]}" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                                         <a class="right carousel-control" href="#myCarousel_${dic["id"]}" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                                      </div></div>`;
+
+                    htmlBody += obj4Header + obj4Body + obj4Footer;
                 } else {//小标题
                     htmlBody += `<p style="text-align: left;font-family:PingFangSC-Semibold, sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
                 }
             }
             $('#xxzDetailDiv').html(htmlBody);
-            var traget = document.getElementById("mobile-menu");
-            traget.style.display = "none";
         });
     }
 

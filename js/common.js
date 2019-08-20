@@ -40,62 +40,74 @@ jQuery("#nav li.level0.drop-menu li").mouseover(function(){
 	jQuery(this).children('ul').fadeOut(100);
 }
 });
+
+    var timer;
 //index头部hover
 $(".nav > li").hover(
     function() {
-	var el = $(this).find(".level0-wrapper");
-        el.hide();
-        el.css("left", "0");
-        el.stop(false, true).delay(0).fadeIn(0, "easeOutCubic");
+
+
+        var self = this;
+        clearTimeout(timer);
+        timer=setTimeout(function(){
+
+            var el = $(self).find(".level0-wrapper");
+            el.hide();
+            el.css("left", "0");
+            el.stop(false, false).delay(0).fadeIn(0, "easeOutCubic");
 
 
 
-	var detailel = $(this).find(".level0-wrapper-detail");
-    if (detailel.length == 1){
-        //字体颜色为黑色
-        var el1 = $(this.parentElement.children).find(".xxzlevel-top");
-        el1.css("color","#000");
-        //最外层背景颜色
-        var el2 = $(this.parentElement.parentElement.parentElement).find("#qqq");
-        el2.css("background-color","#fff");
-        //分割线
-        var el3 = $(this.parentElement.parentElement.parentElement).find(".navLine");
-        el3.css("background-color","#DEDEDE");
+            var detailel = $(self).find(".level0-wrapper-detail");
+            if (detailel.length == 1){
+                //字体颜色为黑色
+                var el1 = $(self.parentElement.children).find(".xxzlevel-top");
+                el1.css("color","#000");
+                //最外层背景颜色
+                var el2 = $(self.parentElement.parentElement.parentElement).find("#qqq");
+                el2.css("background-color","#fff");
+                //分割线
+                var el3 = $(self.parentElement.parentElement.parentElement).find(".navLine");
+                el3.css("background-color","#DEDEDE");
 
 
-        var imgEle = $(this.parentElement.parentElement.parentElement).find("#iconImage");
-        imgEle.attr("src","images/homeiconsel.png");
-    } else{
+                var imgEle = $(self.parentElement.parentElement.parentElement).find("#iconImage");
+                imgEle.attr("src","images/homeiconsel.png");
+            } else{
 
-        var string =  $(this).context.innerText;
-        if (string == "首页" || string == "品牌分类" || string == "关于我们" || string == "") {
+                var string =  $(self).context.innerText;
+                if (string == "首页" || string == "品牌分类" || string == "关于我们" || string == "") {
 
-        } else{
-            //字体颜色为黑色
-            var el1 = $(this.parentElement.children).find(".xxzlevel-top");
-            el1.css("color","#000");
-            //最外层背景颜色
-            var el2 = $(this.parentElement.parentElement.parentElement).find("#qqq");
-            el2.css("background-color","rgb(255,255,255,0.95)");
+                } else{
+                    //字体颜色为黑色
+                    var el1 = $(self.parentElement.children).find(".xxzlevel-top");
+                    el1.css("color","#000");
+                    //最外层背景颜色
+                    var el2 = $(self.parentElement.parentElement.parentElement).find("#qqq");
+                    el2.css("background-color","rgb(255,255,255,0.95)");
 
-            //分割线
-            var el3 = $(this.parentElement.parentElement.parentElement).find(".navLine");
-            el3.css("background-color","#DEDEDE");
+                    //分割线
+                    var el3 = $(self.parentElement.parentElement.parentElement).find(".navLine");
+                    el3.css("background-color","#DEDEDE");
 
-            var imgEle = $(this.parentElement.parentElement.parentElement).find("#iconImage");
-            imgEle.attr("src","images/homeiconsel.png");
-        }
+                    var imgEle = $(self.parentElement.parentElement.parentElement).find("#iconImage");
+                    imgEle.attr("src","images/homeiconsel.png");
+                }
 
-    }
+            }
 
 
+
+
+        },200);
 
 
 
 
     },
     function() {
-	$(this).find(".level0-wrapper").stop(true, true).delay(0).fadeOut(0, "easeInCubic").css("color","#fff");
+        clearTimeout(timer);
+	$(this).find(".level0-wrapper").stop(false, true).delay(0).fadeOut(0, "easeInCubic").css("color","#fff");
 
 
         var detailel = $(this).find(".level0-wrapper-detail");
@@ -193,173 +205,6 @@ jQuery(".nav li.level0.drop-menu li").mouseover(function(){
 }
 });
 
-jQuery("#best-seller-slider .slider-items").owlCarousel({
-	items : 4, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : true
-});
-
-jQuery("#bag-seller-slider .slider-items").owlCarousel({
-	items : 3, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-jQuery("#top-category .slider-items").owlCarousel({
-	items : 7, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-
-jQuery("#featured-slider .slider-items").owlCarousel({
-	items : 3, //10 items above 1000px browser width
-	itemsDesktop: [1024, 3],
-            itemsDesktopSmall: [900, 2],
-            itemsTablet: [600, 1],
-            itemsMobile: [320, 1][480, 1],
-            navigation: !0,
-            navigationText: ['<a class="flex-prev"></a>', '<a class="flex-next"></a>'],
-            slideSpeed: 500,
-            pagination: !1
-});
-jQuery("#recommend-slider .slider-items").owlCarousel({
-	items : 6, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-jQuery("#brand-logo-slider .slider-items").owlCarousel({
-	autoplay : true,
-	items : 6, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-jQuery("#category-desc-slider .slider-items").owlCarousel({
-	autoplay : true,
-	items : 1, //10 items above 1000px browser width
-	itemsDesktop : [1024,1], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,1], // 3 items betweem 900px and 601px
-	itemsTablet: [600,1], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-jQuery("#more-views-slider .slider-items").owlCarousel({
-	autoplay : true,
-	items : 3, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-jQuery("#related-products-slider .slider-items").owlCarousel({
-	items : 5, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-
-jQuery("#upsell-products-slider .slider-items").owlCarousel({
-	items : 5, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-jQuery("#cross-sell-products .slider-items").owlCarousel({
-	items : 4, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : true
-});
-
-
-
-jQuery("#crosssel-products-slider .slider-items").owlCarousel({
-	items : 5, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-
-
-jQuery("#more-views-slider .slider-items").owlCarousel({
-	autoplay : true,
-	items : 3, //10 items above 1000px browser width
-	itemsDesktop : [1024,4], //5 items between 1024px and 901px
-	itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-	itemsTablet: [600,2], //2 items between 600 and 0;
-	itemsMobile : [320,1],
-	navigation : true,
-	navigationText : ["<a class=\"flex-prev\"></a>","<a class=\"flex-next\"></a>"],
-	slideSpeed : 500,
-	pagination : false
-});
-jQuery(document).ready(function($){
-$("#mobile-menu").mobileMenu({
-MenuWidth: 375,
-SlideSpeed : 300,
-WindowsMaxWidth : 767,
-PagePush : true,
-FromLeft : true,
-Overlay : true,
-CollapseMenu : true,
-ClassName : "mobile-menu"
-});
-});
  /*========== Left Nav ===========*/
 
 jQuery(document).ready(function(){
