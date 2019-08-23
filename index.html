@@ -14,7 +14,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
     <script src="js/ajax.js"></script>
 </head>
-
+<script>
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
+            window.location.href = "http://47.99.113.177/phone/#/";
+        }
+    }
+    browserRedirect();
+</script>
 <body class="cms-index-index index indexVC">
 <!--pc-->
 <div id="page">
@@ -171,19 +179,7 @@
 <!--pc导航js时间-->
 <script>
 
-    var res = JSON.parse(localStorage.getItem("cacheData"));
 
-    if (res){
-        var navTitleArr = [];
-        for (var i = 0; i < JSON.parse(res).length; i++) {
-            var dic = JSON.parse(res)[i];
-            navTitleArr.push(dic['child_list']);
-        }
-        pc_Action(navTitleArr);
-        var script = document.createElement("script");
-        script.src = "js/common.js";
-        document.body.appendChild(script)
-    } else{
         ajax('GET', 'pub/all_option/', '', res => {
 
             localStorage.setItem("cacheData",JSON.stringify(res));
@@ -203,7 +199,6 @@
             script.src = "js/common.js";
             document.body.appendChild(script)
         });
-    }
 
 
     //pc数据

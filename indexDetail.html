@@ -43,7 +43,7 @@
             style="height:1px;background:#DEDEDE;"></div>
 
 
-    <div style="width: 100%;;background:rgba(245,245,245,1);padding-bottom: 60px;">
+    <div style="width: 100%;;background:rgba(245,245,245,1);padding-bottom: 60px;min-height:1280px">
         <!--<ul class="breadcrumb" >-->
             <!--<li><a href="index.html">你当前的位置:首页</a></li>-->
             <!--<li class="active"></li>-->
@@ -89,25 +89,7 @@
 <script type="text/javascript" src="js/common.js"></script>
 
 
-<script>
-    function browserRedirect() {
-        var sUserAgent = navigator.userAgent.toLowerCase();
-        if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
-            //跳转移动端页面
-            var traget = document.getElementById("page");
-            traget.style.display = "none";
-            var traget1 = document.getElementById("mobile-menu");
-            traget1.style.display = "block";
-        } else{
-            //跳转pc端页面
-            var traget = document.getElementById("page");
-            traget.style.display = "block";
-            var traget1 = document.getElementById("mobile-menu");
-            traget1.style.display = "none";
-        }
-    }
-    browserRedirect();
-</script>
+
 
 
 
@@ -136,17 +118,17 @@
         // $('.level0-wrapper').css('display','none');
         //
         // $('.breadcrumb li.active').html(navTitleArr[0][smallId]["name"]);
-        var sqlJson = [];
+        var sqlJsonAll = [];
         for (var i = 0; i < navTitleArr[0][smallId]["child_list"].length; i++) {
             var dic = navTitleArr[0][smallId]["child_list"][i];
 
             for (var k = 0; k < dic["child_list"].length; k++) {
                 var dic1 = dic["child_list"][k];
-                sqlJson.push(dic1);
+                sqlJsonAll.push(dic1);
             }
         }
 
-        getIndexData(sqlJson);
+        getIndexData(sqlJsonAll);
 
         var script = document.createElement("script");
         script.src = "js/common.js";
@@ -184,15 +166,21 @@
             $(this).siblings().css("color",'#000');
             console.log($(this).index());
 
-            var sqlJson = [];
+
+            if ($(this).index() == 0){
+                getIndexData(sqlJsonAll);
+
+            }else{
+                var sqlJson = [];
                 var dic = navTitleArr[0][smallId]["child_list"][$(this).index()-1];
 
                 for (var k = 0; k < dic["child_list"].length; k++) {
                     var dic1 = dic["child_list"][k];
                     sqlJson.push(dic1);
                 }
+                getIndexData(sqlJson);
 
-            getIndexData(sqlJson);
+            }
 
         });
 
