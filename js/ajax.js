@@ -1,5 +1,5 @@
 function ajax(method, url, data, fnsuccess) {
-    url = 'http://thegdlife.com:8001/' + url;
+    url = 'http://lpszn.com/api/' + url;
     // url = 'http://192.168.0.12:8001/' + url;
 
     var xhr;

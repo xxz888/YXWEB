@@ -11,7 +11,7 @@
 
     <!-- Favicons Icon -->
 
-    <title>Home</title>
+    <title>蓝皮书</title>
 
     <!-- Mobile Specific -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -95,25 +95,25 @@
 <script type="text/javascript" src="js/revolution.extension.js"></script>
 
 
-<script>
-    function browserRedirect() {
-        var sUserAgent = navigator.userAgent.toLowerCase();
-        if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
-            //跳转移动端页面
-            var traget = document.getElementById("page");
-            traget.style.display = "none";
-            var traget1 = document.getElementById("mobile-menu");
-            traget1.style.display = "block";
-        } else{
-            //跳转pc端页面
-            var traget = document.getElementById("page");
-            traget.style.display = "block";
-            var traget1 = document.getElementById("mobile-menu");
-            traget1.style.display = "none";
-        }
-    }
-    browserRedirect();
-</script>
+<!--<script>-->
+    <!--function browserRedirect() {-->
+        <!--var sUserAgent = navigator.userAgent.toLowerCase();-->
+        <!--if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {-->
+            <!--//跳转移动端页面-->
+            <!--var traget = document.getElementById("page");-->
+            <!--traget.style.display = "none";-->
+            <!--var traget1 = document.getElementById("mobile-menu");-->
+            <!--traget1.style.display = "block";-->
+        <!--} else{-->
+            <!--//跳转pc端页面-->
+            <!--var traget = document.getElementById("page");-->
+            <!--traget.style.display = "block";-->
+            <!--var traget1 = document.getElementById("mobile-menu");-->
+            <!--traget1.style.display = "none";-->
+        <!--}-->
+    <!--}-->
+    <!--browserRedirect();-->
+<!--</script>-->
 
 
 
@@ -171,12 +171,52 @@
                     detailArr.push(arr[i][k]);
                 }
             }
+
+            var obj6String = '';
+            //先得到obj=6的,才能开始遍历
+            for (let i = 0; i < detailArr.length; i++) {
+                var dic = detailArr[i];
+                if (dic['obj'] == 6){
+                    obj6String = dic['detail'];
+                }
+            }
+
             for (var i = 0; i < detailArr.length; i++) {
                 var dic = detailArr[i];
                 if (dic['obj'] == 1) {//大标题
                     htmlBody += `<p style="text-align: left;font-family:PingFangSC-Semibold, sans-serif;font-size: 23px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
                 } else if (dic['obj'] == 2) {//文章
-                    htmlBody += `<p style="text-align: left;font-family:PingFangSC-Light,  sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
+
+                    var newString = dic['detail'];
+
+                    if (obj6String != ''){
+                        var obj6Array = obj6String.split(';');
+                        for (let j = 0; j < obj6Array.length; j++) {
+                            var obj6Arr1 = obj6Array[j].split(',');
+
+                            var nameArr = obj6Arr1[0];
+
+                            var id2 = obj6Arr1[2].split('-')[1];
+                            var id3 = obj6Arr1[2].split('-')[2];
+
+
+                            //根据id得到
+                            for (let k = 0; k < navTitleArr[0].length; k++) {
+                                var dick = navTitleArr[0][k];
+                                if (dick.id == id2){
+                                    //处理可点击的文字
+                                    newString = newString.replace(nameArr,`<a style="color: blue" href="indexDetailDetail.html?${id3+ ':' + k }">${nameArr}</a>`);
+                                }
+                            }
+                        }
+                        htmlBody += `<p style="text-align: left;font-family:PingFangSC-Light,  sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${newString}</p>`;
+
+                    } else{
+                        htmlBody += `<p style="text-align: left;font-family:PingFangSC-Light,  sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${newString}</p>`;
+                    }
+
+
+
                 } else if (dic['obj'] == 3) {//图片
                     htmlBody += `<image src="${dic['detail']}" style="text-align: left;width: 100%;height: auto;margin-top: 20px;margin-bottom: 20px"></image>`;
                 } else if (dic['obj'] == 4) {//轮播
@@ -202,8 +242,7 @@
                     var obj4Footer = `</div>
                                          <a class="left carousel-control" href="#myCarousel_${dic["id"]}" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
+                        <3
                                          <a class="right carousel-control" href="#myCarousel_${dic["id"]}" role="button" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
@@ -211,18 +250,20 @@
                                       </div></div>`;
 
                     htmlBody += obj4Header + obj4Body + obj4Footer;
-                } else {//小标题
+                } else if(dic['obj'] == 5){//小标题
                     htmlBody += `<p style="text-align: left;font-family:PingFangSC-Semibold, sans-serif;font-size: 18px;margin-top: 20px;margin-bottom: 20px">${dic['detail']}</p>`;
                 }
             }
             $('#xxzDetailDiv').html(htmlBody);
+
+            jumpLink(detailArr);
         });
     }
 
     //pc数据
     function pc_Action(navTitleArr) {
         var htmlHeader = '<li><image style="width:200px;height: 60px" id="iconImage" src="images/homeiconsel.png"></image></li><li style="margin-left: 300px"><a class="xxzlevel-top xxzlevel-top1 xxzlevel-top2" href="index.html" ><span>首页</span></a></li>';
-        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.thegdlife.com/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="aboutUs.html" ><span>关于我们</span></a></li>';
+        var htmlFooter = '<li><a class="xxzlevel-top xxzlevel-top1" href="http://www.lpszn.com/api/brand/" ><span>品牌分类</span></a></li><li><a class="xxzlevel-top xxzlevel-top1" href="aboutUs.html" ><span>关于我们</span></a></li>';
         //动态的导航栏
         var htmlBody = '';
 
