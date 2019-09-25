@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邀好友 拿福利</title>
+    <!--主要样式-->
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/dialog.css">
+</head>
+<body class="yaoqingbj">
+
+<button id="confirmWithCustom" class="p2Style">活动规则</button>
+<img  class="img1Style" src="images/cj_yaohaoyou.png" alt="">
+<div class="div1Style"><p class="p1Style">每邀请一位好友得200积分</p></div>
+<div class="div3Style">
+    <div class="div31Style"><p class="div31pStyle">注册享新人福利</p></div>
+    <div class="div32Style">
+        <img src="images/cj_phone.png" class="img32Style" alt="">
+        <div class="div321Style">
+            <input id="inputVal" class="input32Style" type="text" placeholder="请输入手机号">
+        </div>
+    </div>
+    <div class="line32"></div>
+    <!--<div class="div32Style" style="margin-top: 50px">-->
+        <!--<img src="images/cj_code.png" class="img32Style" alt="">-->
+        <!--<div class="div321Style">-->
+            <!--<input class="input32Style" type="text" placeholder="请输入验证码">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="line32"></div>-->
+
+        <button onclick="lijiyaoqingAction()" class="div14Style">
+            立即邀请
+        </button>
+
+
+
+
+</div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.dialog.js"></script>
+<script src="js/ajax1.js"></script>
+
+<script>
+
+
+    // var dic = {'mobile':phone,'user_id':''};
+    // ajax('POST', 'users/invite/', dic, res => {
+    //     alert(res.message);
+    // });
+    function lijiyaoqingAction(){
+        var phone = $("#inputVal").val();
+        alert(phone);
+    }
+    // 确认框：自定义内容格式，阻止onConfrim的执行
+    $('#confirmWithCustom').click(function() {
+        $.sendConfirm({
+            title: '',
+            content:"<div class=\"pDiv1Style\">\n" +
+                "    <p class=\"tp1style\">活动规则</p>\n" +
+                "    <div class=\"pDiv2Style\">\n" +
+                "        <p class=\"tp2Style\">1.通过邀请链接注册后，再APP内使用手机号+</p>\n" +
+                "        <p class=\"tp2Style\">&nbsp&nbsp验证码方式登陆即为邀请成功</p>\n" +
+                "        <p class=\"tp2Style\">2.邀请成功，邀请者、受邀者均可获得奖励</p>\n" +
+                "        <p class=\"tp2Style\">3.邀请人有奖邀请数量为3个，奖励明细如下</p>\n" +
+                "        <div class=\"pDiv3Style\">\n" +
+                "\n" +
+                "            <div class=\"pDiv4Style\" style=\"float: left\">\n" +
+                "                邀请人数\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv4Style\" style=\"float: left\">\n" +
+                "                邀请者\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv4Style\" style=\"float: left;border-right: 0px solid #000;width: 33.7%;\">\n" +
+                "                受邀者\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv5Style\" style=\"float: left\">\n" +
+                "                ≤3人\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv5Style\" style=\"float: left\">\n" +
+                "                200积分/人\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv5Style\" style=\"float: left;border-right: 0px solid #000;width: 33.7%;\">\n" +
+                "                100积分/人\n" +
+                "            </div>\n" +
+                "        </div>\n" +
+                "\n" +
+                "        <p class=\"tp2Style\" style=\"margin-top: 40px\">4.邀请人数超出规定则双方均不在奖励</p>\n" +
+                "\n" +
+                "        <p class=\"tp2Style\">5.积分到账时间为受邀着登陆蓝皮书后24小时</p>\n" +
+                "        <p class=\"tp2Style\">6.受邀者同一手机设备注册多账号仅可领取一次奖励</p>\n" +
+                "    </div>\n" +
+                "\n" +
+                "\n" +
+                "</div>",
+            button: {
+                confirm: '',
+                cancel: ''
+            },
+            width: 750,
+            onBeforeConfirm: function() {
+                // onBeforeConfirm返回false，将阻止onConfirm的执行
+                return false;
+            },
+            onConfirm: function() {
+                console.log('点击确认！');
+            },
+            onCancel: function() {
+                console.log('点击取消！');
+            },
+            onClose: function() {
+                console.log('点击关闭！');
+            }
+        });
+    });
+
+
+</script>
+<style>
+
+    .div14Style{
+        margin-top: 90px;
+        margin-left: 10%;
+        width: 80%;
+        background:rgba(255,247,179,1);
+        bottom: 0;
+        text-align: center;
+        height: 120px;
+        font-size:38px;
+
+        background:linear-gradient(0deg,rgba(255,247,179,1),rgba(251,231,60,1));
+        box-shadow:0px 10px 9px 1px rgba(0, 0, 0, 0.1);
+        border-radius:49px;
+
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(142,0,14,1);
+        line-height:90px;
+
+        border: 0 solid rgba(255,251,243,1);
+
+    }
+    .line32{
+        margin-top: 20px;
+        width:80%;
+        height:2px;
+        background: rgba(238, 238, 238, 1);
+        margin-left: 10%;
+    }
+    .div321Style{
+
+    }
+    .input32Style{
+        background: rgba(255,251,243,1);
+        border: 0 solid rgba(255,251,243,1);
+        margin-left: 50px;
+        margin-top: 0;
+        height: 55px;
+        font-size:34px;
+        font-family:PingFang SC;
+        /*font-weight:500;*/
+        /*color:rgba(153,153,153,1);*/
+        line-height:55px;
+    }
+    .img32Style{
+        margin-left: 10%;
+        width: 55px;
+        height: 55px;
+        float: left;
+    }
+    .div32Style{
+        margin-top: 140px;
+        text-align: left;
+    }
+    .div31Style{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .div31pStyle{
+        width:100%;
+        height:34px;
+        font-size:44px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(142,0,14,1);
+        line-height:130px;
+    }
+    .pDiv4Style{
+        text-align: center;
+        line-height: 65px;
+        width: 33%;
+        height: 65px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        font-size:22px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+    }
+    .pDiv5Style{
+        text-align: center;
+        line-height: 65px;
+        width: 33%;
+        height: 65px;
+        border-right: 1px solid #000;
+        font-size:22px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+    }
+    .pDiv3Style{
+        margin-top: 60px;
+        margin-left: 0;
+        width:100%;
+        height: 130px;
+        border: 1px solid #000;
+        margin-bottom: 30px;
+    }
+    .pDiv2Style{
+        text-align: left;margin-top: 80px;
+    }
+    .tp2Style{
+        margin-top: 40px;
+        margin-left: 0;
+        width:100%;
+        height:28px;
+        font-size:32px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(68,68,68,1);
+        line-height:48px;
+    }
+    .pDiv1Style{
+        border-radius: 15px;
+        margin-left: 5%;
+        width: 90%;
+        height: 820px;
+        text-align: center;
+        background: #fff;
+    }
+    .tp1style{
+        width:100%;
+        height:31px;
+        font-size:40px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(51,51,51,1);
+        line-height:73px;
+    }
+
+    .yaoqingbj{
+        background: url("images/cj_bj.png") no-repeat;
+        margin:0px;
+        background-size:100% 2200px;
+        /*background-attachment:fixed;*/
+        position: relative;
+    }
+    .img1Style{
+        margin-top: 100px;
+        margin-left: 10%;
+        width: 80%;
+        height: auto;
+    }
+    .div1Style{
+        width:60%;
+        height:76px;
+        background:rgba(255,255,255,1);
+        border-radius:38px;
+        margin-left: 20%;
+        text-align: center;
+    }
+    .p1Style{
+        font-size:38px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(142,0,14,1);
+        line-height:80px;
+    }
+
+    .p2Style{
+        margin-left: 70%;
+        width:240px;
+        height:90px;
+        font-size:36px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:90px;
+        background: rgba(241,92,61,1);
+        border-radius:0px 0px 12px 12px;
+
+    }
+    .div3Style{
+        /*bottom: 50px;*/
+        /*position: fixed;*/
+        margin-top: 90%;
+        margin-left: 5%;
+        width: 90%;
+        height: 550px;
+
+
+        background:rgba(255,251,243,1);
+        border-radius:10px;
+    }
+
+</style>
+</html>

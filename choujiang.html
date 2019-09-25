@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Pragma" content="no-cache">
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="swiper/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="swiper/swiper_style.css" />
+		<link rel="stylesheet" type="text/css" href="css/lottery.css" />
+
+        <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="swiper/swiper.min.js"></script>
+        <script src="js/ajax1.js"></script>
+		<title>抽奖</title>
+	</head>
+
+	<body>
+		<div class="all">
+            <div style="height: 30px;">&nbsp</div>
+			<div class="lottery_banner">
+                <div style="
+        padding-top: 110px;
+        color: #fff;
+        font-size:12px;
+        font-family:PingFang SC;">一&nbsp&nbsp活动至 2019/12/30 结束&nbsp&nbsp一</div>
+
+                    <p style="
+                    text-align: center;
+                    margin-top: 15px;
+                    width: 55%;
+                    background:rgba(245,78,153,1);
+                    opacity:0.5;
+                    border-radius:24px;
+            color: #fff;
+            font-size:12px;
+            font-family:PingFang SC;
+            line-height: 30px;
+">蓝*书 已获得领带夹</p>
+			</div>
+			<div class="lottery_times">你有<span class="num">-</span>次抽奖机会</div>
+			<div class="lottery">
+				<div class="shanDeng" id="deng">
+					<div id="luck">
+						<table style="border-spacing:.2rem .2rem;">
+							<tr>
+								<td class="luck-unit luck-unit-0">
+									<img id="img0"  alt="" />
+									<div id="div0">-</div>
+								</td>
+								<td class="luck-unit luck-unit-1">
+									<img id="img1"  alt="" />
+									<div id="div1">-</div>
+								</td>
+								<td class="luck-unit luck-unit-2">
+                                    <img id="img2"  alt="" />
+                                    <div id="div2">-</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="luck-unit luck-unit-7">
+                                    <img id="img7"  alt="" />
+                                    <div id="div7">-</div>
+								</td>
+								<td class="cjBtn" id="btn">
+                                    <img src="images/cjlijichoujiang.png" alt="" />
+                                </td>
+								<td class="luck-unit luck-unit-3">
+									<img id="img3" alt="" />
+									<div id="div3">-</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="luck-unit luck-unit-6">
+                                    <img id="img6"  alt="" />
+                                    <div id="div6">-</div>
+								</td>
+								<td class="luck-unit luck-unit-5">
+                                    <img id="img5"  alt="" />
+                                    <div id="div5">-</div>
+								</td>
+								<td class="luck-unit luck-unit-4">
+                                    <img id="img4"  alt="" />
+                                    <div id="div4">-</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<!--我的奖品-->
+			<div class="my_gift">
+				<div style="
+				margin-top: 12px;
+				font-size:15px;
+				font-family:PingFang SC;
+                font-weight:400;
+                color:rgba(255,255,255,1);"
+                id="jifen"
+                >现有积分:1000分</div>
+			</div>
+			<!--我的奖品-->
+
+
+            <div style="margin-top: 16px">
+                <div style="
+                margin-left: 7.5%;
+                text-align: center;
+                background: #E53C88;
+                border-radius:12px;
+                width: 85%;
+                height: 44px;">
+
+                    <p style="
+                    font-family:PingFang SC;
+                    font-size:15px;
+                    font-weight:400;
+                    color:rgba(255,255,255,1);
+                    line-height:44px;">分享活动额外增加2次抽奖机会</p>
+
+                </div>
+
+            </div>
+
+			<!--获奖名单-->
+			<div style="margin-left: 7.5%">
+                <div style="
+                margin-top: 22px;
+                font-size: 19px;
+                font-family:PingFang SC;
+                font-weight:bold;
+                color:rgba(255,255,255,1);">抽奖规则</div>
+
+
+                <div style="
+                margin-top: 22px;
+                font-size: 10px;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:rgba(255,255,255,1);">1. 美味用户可抽奖1次，后续抽奖需要使用积分，100积分/次</div>
+
+                <div style="
+                margin-top: 22px;
+                font-size: 10px;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:rgba(255,255,255,1);">2. 分享活动可增加2次抽奖机会</div>
+
+                <div style="
+                margin-top: 22px;
+                font-size: 10px;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:rgba(255,255,255,1);">3. 分享奖品可于下方“我的奖品”查看详细信息</div>
+
+                <div style="
+                margin-top: 22px;
+                font-size: 10px;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:rgba(255,255,255,1);">4. 请及时领取并填写有关信息，有任何疑问请联系客服</div>
+
+                <div style="
+                margin-top: 22px;
+                font-size: 10px;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:rgba(255,255,255,1);">&nbsp</div>
+
+            </div>
+		</div>
+
+
+		<!--弹窗结束-->
+        <div class="cover dis_no"></div>
+        <!--弹窗开始-->
+        <div class="cover_box dis_no">
+            <div class="card_box">
+                <div style="
+                margin-top: 15px;
+                font-size:18px;
+                font-family:PingFangSC;
+                font-weight:500;
+                color:rgba(254,155,1,1);
+                line-height:25px;"
+                id="henyihan"
+                >一 &nbsp&nbsp恭喜你&nbsp&nbsp一</div>
+
+                <div style="
+                margin-top: 8px;
+                font-size:12px;
+                font-family:PingFang-SC;
+                font-weight:400;
+                color:rgba(68,68,68,1);
+                line-height:17px;"
+                id="henyihanwenzi"
+                >在本次幸运大抽奖中获得</div>
+
+                <img id="zhognjiangimg" style="width: 90px;height:90px;margin-top: 13px;border-radius: 10px" src="images/cjjb.png" alt="">
+                <div id="zhongjiangdiv" style="margin-top: 13px;font-size:14px;
+font-family:PingFang-SC;
+font-weight:400;
+color:rgba(255,149,0,1);
+line-height:20px;">-</div>
+
+                <input type="button" value="确认" class="btn_default">
+            </div>
+            <!--<img src="images/icon-close.png" alt="" class="close">-->
+        </div>
+        <!--弹窗结束-->
+
+
+
+
+		<script>
+            var deocdeURL = decodeURI(location.href);//解码url
+            var pureURL = deocdeURL.split("index.html?")[1];//获取"?"以后的参数
+            var token = 'JWT '+pureURL;
+
+
+
+            var arr = [];
+            var zhongjiangCount = 0;
+            var QiNiuUrl = "http://photo.lpszn.com/"
+            ajax('GET', 'pub/prize/', token, res => {
+
+
+                arr = JSON.parse(res).prize;
+                $('#img0').attr("src", QiNiuUrl + arr[0].photo);
+                $('#div0').text( arr[0].name);
+
+                $('#img1').attr("src", QiNiuUrl + arr[1].photo);
+                $('#div1').text( arr[1].name);
+
+                $('#img2').attr("src", QiNiuUrl + arr[2].photo);
+                $('#div2').text( arr[2].name);
+
+                $('#img3').attr("src", QiNiuUrl + arr[3].photo);
+                $('#div3').text( arr[3].name);
+
+                $('#img4').attr("src", QiNiuUrl + arr[4].photo);
+                $('#div4').text( arr[4].name);
+
+                $('#img5').attr("src", QiNiuUrl + arr[5].photo);
+                $('#div5').text( arr[5].name);
+
+                $('#img6').attr("src", QiNiuUrl + arr[6].photo);
+                $('#div6').text( arr[6].name);
+
+                $('#img7').attr("src", QiNiuUrl + arr[7].photo);
+                $('#div7').text( arr[7].name);
+
+
+                $('#jifen').text('现有积分:'+JSON.parse(res).integral+'分');
+
+                $('.num').text(JSON.parse(res).lotto_chance);
+
+                zhongjiangCount = JSON.parse(res).lotto_chance;
+            });
+            var luck = {
+                index: 0, //当前转动到哪个位置，起点位置
+                count: 9, //总共有多少个位置
+                timer: 0, //setTimeout的ID，用clearTimeout清除
+                speed: 20, //初始转动速度
+                times: 0, //转动次数
+                cycle: 30, //转动基本次数：即至少需要转动多少次再进入抽奖环节
+                prize: -1, //中奖位置
+                init: function(id) {
+                    if($("#" + id).find(".luck-unit").length > 0) {
+                        $luck = $("#" + id);
+                        $units = $luck.find(".luck-unit");
+                        this.obj = $luck;
+                        this.count = $units.length;
+                        $luck.find(".luck-unit-" + this.index).addClass("active");
+                    };
+                },
+
+                roll: function() {
+                    var index = this.index;
+                    var count = this.count;
+                    var luck = this.obj;
+                    $(luck).find(".luck-unit-" + index).removeClass("active");
+                    index += 1;
+                    if(index > count - 1) {
+                        index = 0;
+                    };
+                    $(luck).find(".luck-unit-" + index).addClass("active");
+                    this.index = index;
+                    return false;
+                },
+                stop: function(index) {
+                    this.prize = index;
+                    return false;
+                }
+            };
+
+            function roll() {
+                luck.times += 1;
+                luck.roll();
+                if(luck.times > luck.cycle + 10 && luck.prize == luck.index) {
+                    clearTimeout(luck.timer);
+                    luck.prize = -1;
+                    luck.times = 0;
+                    click = false;
+                } else {
+                    if(luck.times < luck.cycle) {
+                        luck.speed -= 10;
+                    } else if(luck.times == luck.cycle) {
+
+                        ajax('GET', 'pub/lotto/', token, res => {
+                            var zhongjiangIndex = 5;
+                            var dic = JSON.parse(res);
+                            for (let i = 0; i < arr.length; i++) {
+                                if (dic.name == arr[i].name){
+                                    zhongjiangIndex = i;
+
+                                    $('#zhognjiangimg').attr("src", QiNiuUrl + dic.photo);
+                                    $('#zhongjiangdiv').text(dic.name);
+
+
+                                    if (dic.name=='谢谢参与'){
+
+                                        $('#henyihan').text('—— '+'很遗憾'+' ——');
+                                        $('#henyihan').css("color", '#333');
+                                        $('.card_box').css("background", '#ffffff');
+                                        $('#henyihanwenzi').text('谢谢您的参与，再接再厉');
+                                        $('#henyihanwenzi').css('color','#444444');
+                                        $('.btn_default').css("background", '#0A2436');
+                                        $('#zhongjiangdiv').css('color','#333');
+                                    }
+
+
+                                }
+                            }
+                            console.log(zhongjiangIndex);
+                            luck.prize = zhongjiangIndex; //最终中奖位置
+                        });
+
+
+                    } else {
+                        if(luck.times > luck.cycle + 10 && ((luck.prize == 0 && luck.index == 7) || luck.prize == luck.index + 1)) {
+                            luck.speed += 110;
+                        } else {
+                            luck.speed += 20;
+                        }
+                    }
+                    if(luck.speed < 40) {
+                        luck.speed = 40;
+                    };
+
+                    luck.timer = setTimeout(roll, luck.speed);
+                }
+                return false;
+            }
+
+            var click = false;
+
+
+
+            window.onload = function() {
+                luck.init('luck');
+                $("#btn").click(function() {
+
+                        // if (zhongjiangCount == 0){
+                        //
+                        //     alert("你已无抽奖机会")
+                        //     return;
+                        // }
+
+                        setTimeout(function() {
+                            $(".cover").removeClass("dis_no");
+                            $(".cover_box").removeClass("dis_no");
+                            $("body,html").css({
+                                "height": "100%",
+                                "overflow": "hidden"
+                            })
+                        }, 5500);
+
+                        if(click) {
+                            return false;
+                        } else {
+                            luck.speed = 100;
+                            roll();
+                            click = true;
+                            return false;
+                        }
+
+
+
+
+                });
+            };
+
+            //			轮播图
+            var swiper = new Swiper('.draw-container', {
+                direction: "vertical",
+                autoplay: true,
+                loop: true,
+            });
+
+            //ios弹窗位置调整
+            $("input").bind('focus', function() {
+                var top = document.body.scrollTop;
+                $(window).scrollTop(top);
+            })
+            $("input").bind('blur', function() {
+                var top = document.body.scrollTop;
+                $(window).scrollTop(top);
+            })
+            //关闭弹窗
+            $(".close").on("click", function() {
+                $(".cover").addClass("dis_no");
+                $(".cover_box").addClass("dis_no");
+                $("body,html").css({
+                    "height": "100%",
+                    "overflow": "auto"
+                })
+            })
+            //关闭弹窗
+            $(".btn_default").on("click", function() {
+                $(".cover").addClass("dis_no");
+                $(".cover_box").addClass("dis_no");
+                $("body,html").css({
+                    "height": "100%",
+                    "overflow": "auto"
+                });
+                location.reload();
+            })
+            $("#form_insure").on("click", function() {
+                $(".cover_box").addClass("dis_no");
+                $(".result_box").removeClass("dis_no");
+                $("body,html").css({
+                    "height": "100%",
+                    "overflow": "hidden"
+                })
+            })
+
+		</script>
+	</body>
+
+</html>

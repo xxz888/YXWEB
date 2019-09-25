@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邀好友 拿福利</title>
+    <!--主要样式-->
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/dialog.css">
+</head>
+<body class="yaoqingbj">
+
+        <button id="confirmWithCustom" class="p2Style">活动规则</button>
+        <img  class="img1Style" src="images/cj_yaohaoyou.png" alt="">
+        <div class="div1Style"><p class="p1Style">每邀请一位好友得200积分</p></div>
+        <div class="div3Style">
+            <div class="div4Style"  style="float: left">
+                    <div class="div5Style">0</div>
+                    <div class="div6Style">累积奖励</div>
+            </div>
+            <div class="div4Style" style="float: left">
+                <div class="div5Style">102</div>
+                <div class="div6Style">邀请人数</div>
+            </div>
+            <div class="div4Style div7Style"  style="float: left">
+                <div class="div5Style" style="font-weight: 300">点击查看></div>
+                <div class="div6Style">我的邀请</div>
+            </div>
+        </div>
+
+        <div class="div8Style">
+
+            <img src="images/cj_yinhao.png" class="img2Style" alt="">
+            <span class="p3Style">&nbsp&nbsp&nbsp如何邀请好友&nbsp&nbsp&nbsp</span>
+            <img src="images/cj_yinhao.png" class="img2Style" alt="">
+
+        </div>
+
+        <div class="div9Style">
+            <div class="div10Style">
+                <img class="img4Style" src="images/cj_fenxiang.png" alt="">
+                <div class="div11Style">分享链接</div>
+            </div>
+            <div class="div12Style">
+                <img class="img4Style" src="images/cj_jiantou.png" alt="">
+            </div>
+            <div class="div10Style">
+                <img class="img4Style" src="images/cj_haoyouzhuce.png" alt="">
+                <div class="div11Style">好友注册</div>
+            </div>
+            <div class="div12Style">
+                <img class="img4Style" src="images/cj_jiantou.png" alt="">
+
+            </div>
+            <div class="div10Style">
+                <img class="img4Style" src="images/cj_lingqvjiangli.png" alt="">
+                <div class="div11Style">领取奖励</div>
+            </div>
+        </div>
+
+        <div class="p5Style">
+            <button onclick="lijiyaoqingAction()" class="div14Style">
+                立即邀请
+            </button>
+        </div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.dialog.js"></script>
+<script>
+    function lijiyaoqingAction(){
+        window.location.href="http://192.168.101.21:63340/%E7%9F%A9%E5%BD%A2%E6%8A%BD%E5%A5%96%E6%B4%BB%E5%8A%A8html/yaoqing.html?type=one";
+    }
+
+    // 确认框：自定义内容格式，阻止onConfrim的执行
+    $('#confirmWithCustom').click(function() {
+        $.sendConfirm({
+            title: '',
+            content:"<div class=\"pDiv1Style\">\n" +
+                "    <p class=\"tp1style\">活动规则</p>\n" +
+                "    <div class=\"pDiv2Style\">\n" +
+                "        <p class=\"tp2Style\">1.通过邀请链接注册后，再APP内使用手机号+</p>\n" +
+                "        <p class=\"tp2Style\">&nbsp&nbsp验证码方式登陆即为邀请成功</p>\n" +
+                "        <p class=\"tp2Style\">2.邀请成功，邀请者、受邀者均可获得奖励</p>\n" +
+                "        <p class=\"tp2Style\">3.邀请人有奖邀请数量为3个，奖励明细如下</p>\n" +
+                "        <div class=\"pDiv3Style\">\n" +
+                "\n" +
+                "            <div class=\"pDiv4Style\" style=\"float: left\">\n" +
+                "                邀请人数\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv4Style\" style=\"float: left\">\n" +
+                "                邀请者\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv4Style\" style=\"float: left;border-right: 0px solid #000;width: 33.7%;\">\n" +
+                "                受邀者\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv5Style\" style=\"float: left\">\n" +
+                "                ≤3人\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv5Style\" style=\"float: left\">\n" +
+                "                200积分/人\n" +
+                "            </div>\n" +
+                "            <div class=\"pDiv5Style\" style=\"float: left;border-right: 0px solid #000;width: 33.7%;\">\n" +
+                "                100积分/人\n" +
+                "            </div>\n" +
+                "        </div>\n" +
+                "\n" +
+                "        <p class=\"tp2Style\" style=\"margin-top: 40px\">4.邀请人数超出规定则双方均不在奖励</p>\n" +
+                "\n" +
+                "        <p class=\"tp2Style\">5.积分到账时间为受邀着登陆蓝皮书后24小时</p>\n" +
+                "        <p class=\"tp2Style\">6.受邀者同一手机设备注册多账号仅可领取一次奖励</p>\n" +
+                "    </div>\n" +
+                "\n" +
+                "\n" +
+                "</div>",
+            button: {
+                confirm: '',
+                cancel: ''
+            },
+            width: 750,
+            onBeforeConfirm: function() {
+                // onBeforeConfirm返回false，将阻止onConfirm的执行
+                return false;
+            },
+            onConfirm: function() {
+                console.log('点击确认！');
+            },
+            onCancel: function() {
+                console.log('点击取消！');
+            },
+            onClose: function() {
+                console.log('点击关闭！');
+            }
+        });
+    });
+</script>
+<style>
+    .pDiv4Style{
+                text-align: center;
+                line-height: 65px;
+                width: 33%;
+                height: 65px;
+                border-right: 1px solid #000;
+                border-bottom: 1px solid #000;
+                font-size:22px;
+                font-family:PingFang SC;
+                font-weight:400;
+                color:rgba(102,102,102,1);
+            }
+    .pDiv5Style{
+        text-align: center;
+        line-height: 65px;
+        width: 33%;
+        height: 65px;
+        border-right: 1px solid #000;
+        font-size:22px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+    }
+    .pDiv3Style{
+        margin-top: 60px;
+        margin-left: 0;
+        width:100%;
+        height: 130px;
+        border: 1px solid #000;
+        margin-bottom: 30px;
+    }
+    .pDiv2Style{
+        text-align: left;margin-top: 80px;
+    }
+    .tp2Style{
+        margin-top: 40px;
+        margin-left: 0;
+        width:100%;
+        height:28px;
+        font-size:32px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(68,68,68,1);
+        line-height:48px;
+    }
+    .pDiv1Style{
+        border-radius: 15px;
+        margin-left: 5%;
+        width: 90%;
+        height: 820px;
+        text-align: center;
+        background: #fff;
+    }
+    .tp1style{
+        width:100%;
+        height:31px;
+        font-size:40px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(51,51,51,1);
+        line-height:73px;
+    }
+    .p5Style{
+        width: 100%;
+        height:50px;
+        font-size:44px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(142,0,14,1);
+        line-height:120px;
+    }
+
+    .div14Style{
+        margin: 0;
+        width: 100%;
+        background:rgba(255,247,179,1);
+        bottom: 0;
+        position: fixed;
+        text-align: center;
+        height: 150px;
+        font-size:44px;
+        color:rgba(142,0,14,1);
+    }
+    .div11Style{
+        margin-top: 20px;
+        font-size:36px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+    }
+    .div10Style{
+        text-align: center;
+        float: left;
+        width: 25%;
+
+    }
+    .div12Style{
+        text-align: center;
+        float: left;
+        width: 12%;
+        height: 200px;
+        line-height: 135px;
+
+    }
+    .img4Style{
+        width: 65%;
+        height: auto;
+    }
+    .div9Style{
+        margin-top: 5%;
+        margin-left: 12%;
+        width: 76%;
+        margin-bottom: 45%;
+    }
+    .img2Style{
+        width: 30px;
+        height: 30px;
+        float: left;
+
+    }
+    .p3Style{
+        font-size:43px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(255,255,255,1);
+        line-height:90px;
+        float: left;
+        margin-top: -20px;
+    }
+    .div8Style{
+        margin-left: 30%;
+        margin-top: 5%;
+        width:60%;
+        height:60px;
+        text-align: center;
+
+    }
+    .div7Style{
+        font-size:52px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(142,0,14,1);
+    }
+    .div4Style{
+        width: 33%;
+        height: 100%;
+        text-align: center;
+    }
+    .div5Style{
+        width: 100%;
+        height: 115px;
+        line-height: 150px;
+        font-size:42px;
+        font-family:Adobe Heiti Std;
+        font-weight:normal;
+        color:rgba(142,0,14,1);
+        font-weight:500;
+
+    }
+    .div6Style{
+        width: 100%;
+        height: 115px;
+        line-height: 70px;
+
+        font-size:38px;
+        font-family:PingFang SC;
+        font-weight:300;
+        color:rgba(68,68,68,1);
+    }
+    .yaoqingbj{
+        background: url("images/cj_bj.png") no-repeat;
+        margin:0px;
+        background-size:100% 2200px;
+        /*background-attachment:fixed;*/
+        position: relative;
+    }
+    .img1Style{
+        margin-top: 100px;
+        margin-left: 10%;
+        width: 80%;
+        height: auto;
+    }
+    .div1Style{
+        width:60%;
+        height:76px;
+        background:rgba(255,255,255,1);
+        border-radius:38px;
+        margin-left: 20%;
+        text-align: center;
+    }
+    .p1Style{
+        font-size:38px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(142,0,14,1);
+        line-height:80px;
+    }
+    .div2Style{
+        margin-top: 0;
+        margin-left: 70%;
+        width:220px;
+        height:80px;
+        background:rgba(241,92,61,1);
+        border-radius:0px 0px 12px 12px;
+        text-align: center;
+
+    }
+    .p2Style{
+        margin-left: 70%;
+        width:240px;
+        height:90px;
+        font-size:36px;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:90px;
+        background: rgba(241,92,61,1);
+        border-radius:0px 0px 12px 12px;
+
+    }
+    .div3Style{
+        margin-top: 860px;
+        margin-left: 5%;
+        width: 90%;
+        height: 200px;
+        background:rgba(255,255,255,1);
+        border-radius:10px;
+    }
+
+</style>
+</html>
