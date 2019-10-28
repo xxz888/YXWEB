@@ -141,35 +141,35 @@
 
                 <div style="
                 margin-top: 22px;
-                font-size: 10px;
+                font-size: 12px;
                 font-family:PingFang SC;
                 font-weight:400;
                 color:rgba(255,255,255,1);">1. 美味用户可抽奖1次，后续抽奖需要使用积分，100积分/次</div>
 
                 <div style="
                 margin-top: 22px;
-                font-size: 10px;
+                font-size: 12px;
                 font-family:PingFang SC;
                 font-weight:400;
                 color:rgba(255,255,255,1);">2. 分享活动可增加2次抽奖机会</div>
 
                 <div style="
                 margin-top: 22px;
-                font-size: 10px;
+                font-size: 12px;
                 font-family:PingFang SC;
                 font-weight:400;
                 color:rgba(255,255,255,1);">3. 分享奖品可于下方“我的奖品”查看详细信息</div>
 
                 <div style="
                 margin-top: 22px;
-                font-size: 10px;
+                font-size: 12px;
                 font-family:PingFang SC;
                 font-weight:400;
                 color:rgba(255,255,255,1);">4. 请及时领取并填写有关信息，有任何疑问请联系客服</div>
 
                 <div style="
                 margin-top: 22px;
-                font-size: 10px;
+                font-size: 12px;
                 font-family:PingFang SC;
                 font-weight:400;
                 color:rgba(255,255,255,1);">&nbsp</div>
@@ -222,7 +222,7 @@ line-height:20px;">-</div>
 		<script>
             var deocdeURL = decodeURI(location.href);//解码url
             var pureURL = deocdeURL.split("index.html?")[1];//获取"?"以后的参数
-            var token = 'JWT '+pureURL;
+            var token = 'JWT '+'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiIxMzM4Mzc3MzkwMCIsImV4cCI6MTU3NDgyMTU2MywiZW1haWwiOiIifQ.ElwvGg1pKgveysWN_EXNxEWSyfVLCRziKmC885oN0po';
 
 
 
@@ -264,6 +264,11 @@ line-height:20px;">-</div>
 
                 zhongjiangCount = JSON.parse(res).lotto_chance;
             });
+
+
+            // ajax('GET','/users/personal_data/',token,res=>{
+            //
+            // });
             var luck = {
                 index: 0, //当前转动到哪个位置，起点位置
                 count: 9, //总共有多少个位置

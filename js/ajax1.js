@@ -1,6 +1,6 @@
 function ajax(method, url, data, fnsuccess) {
-    // url = 'http://lpszn.com/api/' + url;
-    url = 'http://192.168.101.22:8001/' + url;
+    url = 'http://lpszn.com/api/' + url;
+    // url = 'http://192.168.101.22:8001/' + url;
 
     var xhr;
     //1.创建对象，兼容问题
