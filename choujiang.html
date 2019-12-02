@@ -144,7 +144,7 @@
                 font-size: 12px;
                 font-family:PingFang SC;
                 font-weight:400;
-                color:rgba(255,255,255,1);">1. 美味用户可抽奖1次，后续抽奖需要使用积分，100积分/次</div>
+                color:rgba(255,255,255,1);">1. 每位用户可抽奖1次，后续抽奖需要使用积分，100积分/次</div>
 
                 <div style="
                 margin-top: 22px;
@@ -221,15 +221,15 @@ line-height:20px;">-</div>
 
 		<script>
             var deocdeURL = decodeURI(location.href);//解码url
-            var pureURL = deocdeURL.split("index.html?")[1];//获取"?"以后的参数
-            var token = 'JWT '+'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiIxMzM4Mzc3MzkwMCIsImV4cCI6MTU3NDgyMTU2MywiZW1haWwiOiIifQ.ElwvGg1pKgveysWN_EXNxEWSyfVLCRziKmC885oN0po';
+            var pureURL = deocdeURL.split("choujiang.html?")[1];//获取"?"以后的参数
+            var token = pureURL;//'JWT '+'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MCwidXNlcm5hbWUiOiJcdTRlMDBcdTU4ZjZcdTk5NmVcdTdmNjJcdTgyMzlcdTU5MzRcdTViZDAiLCJleHAiOjE1NzQ5MDQyODMsImVtYWlsIjoiIn0.jA5_idzHePE26O203feXbFyiekBSsnUoMnRgLtOfTQY';
 
 
 
             var arr = [];
             var zhongjiangCount = 0;
             var QiNiuUrl = "http://photo.lpszn.com/"
-            ajax('GET', 'pub/prize/', token, res => {
+            ajax1('GET', 'pub/prize/', token, res => {
 
 
                 arr = JSON.parse(res).prize;
@@ -319,7 +319,7 @@ line-height:20px;">-</div>
                         luck.speed -= 10;
                     } else if(luck.times == luck.cycle) {
 
-                        ajax('GET', 'pub/lotto/', token, res => {
+                        ajax1('GET', 'pub/lotto/', token, res => {
                             var zhongjiangIndex = 5;
                             var dic = JSON.parse(res);
                             for (let i = 0; i < arr.length; i++) {
@@ -373,11 +373,11 @@ line-height:20px;">-</div>
                 luck.init('luck');
                 $("#btn").click(function() {
 
-                        // if (zhongjiangCount == 0){
-                        //
-                        //     alert("你已无抽奖机会")
-                        //     return;
-                        // }
+                        if (zhongjiangCount == 0){
+
+                            alert("你已无抽奖机会")
+                            return;
+                        }
 
                         setTimeout(function() {
                             $(".cover").removeClass("dis_no");

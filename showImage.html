@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title >蓝皮书</title>
+</head>
+<body onclick="javascript:returnAction()">
+    <img id="shareImg" src="" alt="">
+</body>
+<script>
+        document.getElementById("shareImg").src = getQueryVariable('img');
+
+        function getQueryVariable(variable)
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable){return pair[1];}
+            }
+            return(false);
+        }
+
+
+        function returnAction() {
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+            if (isiOS) {
+                var ua = window.navigator.userAgent.toLowerCase();
+                //微信
+                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                    window.location = 'https://itunes.apple.com/cn/app/id1454467501';
+                } else {//非微信浏览器
+                    if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+                        var loadDateTime = new Date();
+                        window.setTimeout(function () {
+                            var timeOutDateTime = new Date();
+                            if (timeOutDateTime - loadDateTime < 5000) {
+                                window.location = "https://itunes.apple.com/cn/app/id1454467501";//ios下载地址
+                            } else {
+                                window.close();
+                            }
+                        }, 2000);
+                        window.location = "schema://";
+                    } else if (navigator.userAgent.match(/android/i)) {
+                        var state = null;
+                        try {
+                            window.location = 'weixin://';
+                            setTimeout(function () {
+                                window.location = "https://m.wandoujia.com/apps/com.jiuju.thegoodlife"; //android下载地址
+                            }, 500);
+                        } catch (e) {
+                        }
+                    }
+                }
+            } else {
+                window.location = 'weixin://';
+                setTimeout(function () {
+                    window.location = "https://m.wandoujia.com/apps/com.jiuju.thegoodlife"; //android下载地址
+                }, 500);
+            }
+            ;
+        }
+</script>
+
+<style>
+    #shareImg{
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</html>

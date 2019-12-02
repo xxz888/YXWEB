@@ -1,4 +1,4 @@
-function ajax(method, url, data, fnsuccess) {
+function ajax1(method, url, data, fnsuccess) {
     url = 'http://lpszn.com/api/' + url;
     // url = 'http://192.168.101.22:8001/' + url;
 
@@ -27,7 +27,7 @@ function ajax(method, url, data, fnsuccess) {
     //send()如果是get方式，写null或者为空；
     //如果是post，参数那就直接写要传输的内容
     if(method == 'GET') {
-        xhr.setRequestHeader("Authorization",data);
+        xhr.setRequestHeader("Authorization",'JWT ' + data);
         xhr.send(null);
     } else {
         //创建头文件信息
