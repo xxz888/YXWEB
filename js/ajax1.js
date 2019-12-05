@@ -18,7 +18,7 @@ function ajax1(method, url, data, fnsuccess) {
     //第三个参数：同步或者异步方式，默认是异步true
     //open
     //get模式路径上同时加入需要传输的内容
-    if(method == 'GET' && data) {
+    if(method == 'GET' && data && data.length < 20) {
         url = url + '?' + data;
     }
     xhr.open(method, url, true);

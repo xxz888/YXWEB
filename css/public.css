@@ -13,7 +13,7 @@ body {
 	padding: 0px;
 	font-family: "microsoft yahei";
 	font-size: 100%;
-	background:#F492B4;
+    background:linear-gradient(0deg,rgba(246,97,102,1),rgba(246,97,102,1));
 	overflow-x: hidden;
 	background-size: 100% 100%;
 }

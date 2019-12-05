@@ -20,17 +20,60 @@
   margin: 0 0.05rem;
   font-weight: bold;
 }
-.lottery_banner{
-    width: 100%;
-    height: 180px;
-    margin-top: 50px;
-    margin: 0 auto;
+.lottery_banner {
+    width: 80%;
+    height: 70px;
+    margin-top: -90px;
+    margin-left: 10%;
     background: url(../images/cjbanner.png) no-repeat;
     background-size: 100% 100%;
-    justify-content:center;
-    align-items:center;
-    display:flex;
-    flex-flow:column;
+}
+.lottery_banner_outside{
+    background: url(../images/cjbanner1.png) no-repeat;
+    background-size: 100% 100%;
+    height: 140px;
+    margin-top: 0;
+}
+.left_div {
+    color: #ffffff;
+    background:rgba(231,186,47,1);
+    font-size:16px;
+    width: 50%;
+    height: 40px;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+}
+.mid_div {
+    background:rgba(253,81,81,1);
+    font-size:16px;
+    width: 0.3%;
+    height: 40px;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+}
+.right_div {
+    margin-left: 0px;
+    color: #000000;
+    background:rgba(231,186,47,1);
+    font-size:16px;
+    width: 49.7%;
+    height: 40px;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+}
+.left_div1 {
+    color: #000000;
+    background:#ffffff;
+
+    font-size:16px;
+    width: 50%;
+    height: 40px;
+    font-family:PingFang SC;
+    font-weight:300;
+    float: left;text-align: center;line-height: 40px;
 }
 .shanDeng {
   width: 100%;
