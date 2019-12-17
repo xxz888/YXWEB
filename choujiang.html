@@ -21,7 +21,8 @@
 		<title>抽奖</title>
 	</head>
 
-	<body>
+	<body style="overflow-y: scroll
+">
 		<div class="all">
             <!--<div style="height: 30px;">&nbsp</div>-->
             <div class="lottery_banner_outside">
@@ -327,18 +328,14 @@ line-height:20px;">-</div>
                 for (var i = 0 ; i < arr.length ;i++){
                     var dic = arr[i];
                     var name =  dic['prize_info']['name'];
-                    liHtml += `<div class="left_div1">${name}</div>
-                                  <div class="left_div1">${dic['date']}</div>`;
+                    liHtml += `<a href="javascript:void(0);" class="left_div1">${name}</a><a href="javascript:void(0);" class="left_div1">${dic['date']}</a>`;
                 }
                 $('#shangpin').html(liHtml);
-                window.scrollTo(300, 0);//回到顶部
-
             }
             function click1(){
                 // $('#shangpin').html('');
                 ajax1('GET','pub/winning/?obj=1',token,res=>{
                     commonRequest(res);
-
                 });
             }
             function click2(){
